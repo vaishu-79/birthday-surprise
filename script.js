@@ -61,3 +61,11 @@ function login() {
     }
 
 }
+function cutCake(){
+
+    document.getElementById("message").innerHTML =
+    "🎊 Yay! Cake Cut Successfully ❤️ 🎂";
+
+    document.querySelector(".cake").style.animation =
+    "shake 0.5s";
+}
