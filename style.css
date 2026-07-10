@@ -125,3 +125,47 @@ button:hover{
     font-size:18px;
     font-style:italic;
 }
+.cake-section{
+    text-align:center;
+    margin-top:50px;
+}
+
+.cake{
+    margin:30px auto;
+    position:relative;
+    width:200px;
+}
+
+.cake-body{
+    width:200px;
+    height:100px;
+    background:pink;
+    border-radius:20px;
+}
+
+.cake-top{
+    width:220px;
+    height:30px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    top:-15px;
+    left:-10px;
+}
+
+.candle{
+    font-size:40px;
+    position:absolute;
+    top:-60px;
+    left:80px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:20px;
+    background:#ff4081;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
