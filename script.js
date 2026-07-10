@@ -11,9 +11,9 @@ function showLogin() {
 // Login button
 function login() {
 
-    let username = document.getElementById("username").value;
+    let username = document.getElementById("username").value.trim();
 
-    let password = document.getElementById("password").value;
+    let password = document.getElementById("password").value.trim();
 
 
     if(username === "SAROVAISHU" && password === "2307"){
