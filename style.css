@@ -404,3 +404,16 @@ transform:scale(1.05);
 }
 
 }
+.knife{
+
+    font-size:50px;
+
+    position:relative;
+
+    left:-250px;
+
+    margin-bottom:20px;
+
+    transition:1.5s ease;
+
+}
