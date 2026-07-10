@@ -16,7 +16,7 @@ function login() {
     let password = document.getElementById("password").value;
 
 
-    if(username === "SAROVAISHU" && password === "2379"){
+    if(username === "SAROVAISHU" && password === "2307"){
 
         alert("Welcome My Love ❤️");
 
