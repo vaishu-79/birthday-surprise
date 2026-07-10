@@ -39,6 +39,8 @@ body{
     box-shadow:0 8px 30px rgba(0,0,0,0.3);
 
     animation:fadeIn 1s;
+    max-height:90vh;
+    overflow-y:auto;
 
 }
 
@@ -411,10 +413,12 @@ transform:rotate(0deg);
 /* Final Photo */
 
 .photo{
-    width:300px;
-    height:270px;
+    width:180px;
+    height:220px;
     object-fit:cover;
     object-position:center top;
     border-radius:20px;
     border:5px solid white;
+    margin:15px auto;
+    display:block;
 }
