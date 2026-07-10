@@ -68,12 +68,7 @@ button:hover{
     background:#ff3385;
     transform:scale(1.05);
 }
-.loveQuote{
-    margin-top:20px;
-    color:white;
-    font-size:18px;
-    font-style:italic;
-}
+
 
 @keyframes fadeIn{
     from{
@@ -123,4 +118,10 @@ button:hover{
         transform:translateY(-110vh);
         opacity:0;
     }
+}
+.loveQuote{
+    margin-top:20px;
+    color:white;
+    font-size:18px;
+    font-style:italic;
 }
