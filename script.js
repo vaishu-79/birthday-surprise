@@ -30,7 +30,7 @@ function login() {
             </h1>
 
 
-            <img src="saro.jpg" class="photo">
+            <img src="images/saro.jpg" class="photo">
 
 
             <p>
