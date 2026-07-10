@@ -66,7 +66,7 @@ function cutCake() {
     document.querySelector(".cake").style.animation =
     "shake 0.5s";
 
-
+document.getElementById("music").play();
 
     // After 2 seconds show birthday page
 
