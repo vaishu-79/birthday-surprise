@@ -56,31 +56,25 @@ function login() {
 
 // Cake Cut Button
 
-function cutCake() {
-
+function cutCake(){
 
     document.getElementById("message").innerHTML =
-    "🎊 Yay! Cake Cut Successfully ❤️🎂";
+    "🎉 Happy Birthday My Love ❤️";
 
+    document.querySelector(".cake-left").style.transform =
+    "translateX(-45px) rotate(-12deg)";
 
-    document.querySelector(".cake").style.animation =
-    "shake 0.5s";
+    document.querySelector(".cake-right").style.transform =
+    "translateX(45px) rotate(12deg)";
 
-document.getElementById("music").play();
-
-    // After 2 seconds show birthday page
+    document.querySelector(".flame").style.display = "none";
 
     setTimeout(function(){
 
+        document.getElementById("cake-page").style.display="none";
 
-        document.getElementById("cake-page").style.display = "none";
+        document.getElementById("birthday-page").style.display="block";
 
-
-        document.getElementById("birthday-page").style.display = "block";
-
-
-    },2000);
-
+    },2500);
 
 }
-    
