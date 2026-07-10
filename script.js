@@ -61,20 +61,30 @@ function cutCake(){
     document.getElementById("message").innerHTML =
     "🎉 Happy Birthday My Love ❤️";
 
-    document.querySelector(".cake-left").style.transform =
-    "translateX(-45px) rotate(-12deg)";
+    // Knife move
+    document.querySelector(".knife").style.left="70px";
 
-    document.querySelector(".cake-right").style.transform =
-    "translateX(45px) rotate(12deg)";
+    // Cake split after knife reaches
+    setTimeout(function(){
 
-    document.querySelector(".flame").style.display = "none";
+        document.querySelector(".cake-left").style.transform =
+        "translateX(-45px) rotate(-12deg)";
 
+        document.querySelector(".cake-right").style.transform =
+        "translateX(45px) rotate(12deg)";
+
+        document.querySelector(".flame").style.display="none";
+
+    },1200);
+
+
+    // Birthday page
     setTimeout(function(){
 
         document.getElementById("cake-page").style.display="none";
 
         document.getElementById("birthday-page").style.display="block";
 
-    },2500);
+    },3000);
 
 }
