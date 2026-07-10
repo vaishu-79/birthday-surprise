@@ -14,7 +14,8 @@ function login() {
     let username = document.getElementById("username").value.trim();
 
     let password = document.getElementById("password").value.trim();
-
+alert("Username = " + username);
+alert("Password = " + password);
 
     if(username === "SAROVAISHU" && password === "2307"){
 
