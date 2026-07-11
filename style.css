@@ -301,56 +301,9 @@ opacity:0;
 
 /* Cake Design */
 
-.cake{
-    position:relative;
-    width:220px;
-    height:150px;
-    margin:40px auto;
-}
-
-.cake-left,
-.cake-right{
-    position:absolute;
-    bottom:0;
-    width:110px;
-    height:100px;
-    background:#ff69b4;
-    border:4px solid white;
-    transition:1s;
-}
-
-.cake-left{
-    left:0;
-    border-radius:15px 0 0 15px;
-}
-
-.cake-right{
-    right:0;
-    border-radius:0 15px 15px 0;
-}
-
-.cake-left::before,
-.cake-right::before{
-    content:"";
-    position:absolute;
-    top:-18px;
-    width:100%;
-    height:22px;
-    background:white;
-    border-radius:50%;
-}
-
-.candle{
-    position:absolute;
-    left:50%;
-    top:-55px;
-    transform:translateX(-50%);
-}
-
-.stick{
-    width:8px;
-    height:35px;
-    background:white;
+.cake-image{
+    width:280px;
+    display:block;
     margin:auto;
 }
 
