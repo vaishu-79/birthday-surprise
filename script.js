@@ -572,7 +572,11 @@ fireworks();
 
 
 },2000);
+setTimeout(()=>{
 
+changePage(galleryPage);
+
+},4000);
 
 
 });
