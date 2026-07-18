@@ -745,3 +745,42 @@ function createBalloons(){
     }
 
 }
+/* =========================================
+   BUTTERFLIES
+========================================= */
+
+function createButterflies(){
+
+    const butterflies=["🦋","🦋","🦋"];
+
+    for(let i=0;i<12;i++){
+
+        let butterfly=document.createElement("div");
+
+        butterfly.className="butterfly";
+
+        butterfly.innerHTML=
+        butterflies[Math.floor(Math.random()*butterflies.length)];
+
+        butterfly.style.left="-50px";
+
+        butterfly.style.top=
+        Math.random()*100+"vh";
+
+        butterfly.style.animationDuration=
+        (8+Math.random()*6)+"s";
+
+        butterfly.style.animationDelay=
+        Math.random()*3+"s";
+
+        document.body.appendChild(butterfly);
+
+        setTimeout(()=>{
+
+            butterfly.remove();
+
+        },15000);
+
+    }
+
+}
