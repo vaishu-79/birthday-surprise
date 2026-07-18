@@ -1,499 +1,708 @@
-// ===============================
-// CANDLE + BIRTHDAY MELODY
-// PART 3A
-// ===============================
+/* =========================================
+   LOADER
+========================================= */
 
 
-// Select Elements
+window.addEventListener("load",()=>{
 
-const flame = document.getElementById("flame");
-const blowBtn = document.getElementById("blowBtn");
-
-
-// Candle State
-
-let candleOn = true;
-
-
-// Blow Candle Function
-
-blowBtn.addEventListener("click",()=>{
-
-    if(candleOn){
-
-        flame.style.display="none";
-
-        blowBtn.innerHTML="✨ Candle Blown ❤️";
-
-        document.getElementById("wish").innerHTML=
-        "Your wish will come true ✨💖";
-
-
-        playBirthdayTune();
-
-        candleOn=false;
-
-    }
-
-});
-
-
-
-// ===============================
-// SIMPLE BIRTHDAY MELODY
-// Using Web Audio API
-// ===============================
-
-
-function playBirthdayTune(){
-
-const audioContext =
-new (window.AudioContext || window.webkitAudioContext)();
-
-
-
-let notes=[
-
-261.63, // C
-261.63, // C
-293.66, // D
-261.63, // C
-349.23, // F
-329.63, // E
-
-261.63,
-261.63,
-293.66,
-261.63,
-392.00,
-349.23,
-
-261.63,
-261.63,
-523.25,
-440.00,
-349.23,
-329.63,
-293.66
-
-];
-
-
-
-let time=audioContext.currentTime;
-
-
-
-notes.forEach((frequency,index)=>{
-
-
-let oscillator=
-audioContext.createOscillator();
-
-
-let gain=
-audioContext.createGain();
-
-
-
-oscillator.type="sine";
-
-
-oscillator.frequency.value=
-frequency;
-
-
-
-oscillator.connect(gain);
-
-gain.connect(
-audioContext.destination
-);
-
-
-
-let startTime=
-time+(index*0.35);
-
-
-
-oscillator.start(startTime);
-
-
-
-gain.gain.setValueAtTime(
-0.3,
-startTime
-);
-
-
-
-gain.gain.exponentialRampToValueAtTime(
-0.01,
-startTime+0.3
-);
-
-
-
-oscillator.stop(
-startTime+0.35
-);
-
-
-
-});
-
-}
-// ===============================
-// CAKE CUTTING ANIMATION
-// PART 3B
-// ===============================
-
-
-const cutBtn = document.getElementById("cutBtn");
-const cake = document.querySelector(".cake");
-const cutLine = document.querySelector(".cut-line");
-
-
-let cakeCut = false;
-
-
-cutBtn.addEventListener("click",()=>{
-
-
-if(!cakeCut){
-
-
-    // Show cutting line
-
-    cutLine.style.height="200px";
-
-
-    // Cake shake effect
-
-    cake.style.animation=
-    "shakeCake 0.5s";
-
+    const loader=document.getElementById("loader");
 
     setTimeout(()=>{
 
+        loader.classList.add("hide");
 
-        cake.classList.add("cut");
-
-
-        document.getElementById("wish").innerHTML=
-        "🎂 Cake Cut Successfully ❤️";
-
-
-        cutBtn.innerHTML=
-        "🍰 Enjoy The Cake 😍";
-
-
-    },500);
-
-
-
-    cakeCut=true;
-
-
-}
+    },2500);
 
 });
 
 
 
-// Cake Shake Animation Add
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
 
-const style =
-document.createElement("style");
+
+let currentPage=1;
 
 
-style.innerHTML=`
 
-@keyframes shakeCake{
+function showPage(pageNumber){
 
-0%{
-transform:translateX(0);
-}
+    document.querySelectorAll(".page").forEach(page=>{
 
-25%{
-transform:translateX(-10px);
-}
+        page.classList.remove("active");
 
-50%{
-transform:translateX(10px);
-}
+    });
 
-75%{
-transform:translateX(-10px);
-}
 
-100%{
-transform:translateX(0);
-}
+    document.getElementById("page"+pageNumber)
+    .classList.add("active");
+
+
+    currentPage=pageNumber;
 
 }
 
 
 
-.cake.cut .top,
-.cake.cut .middle,
-.cake.cut .bottom{
+/* =========================================
+   BUTTON CONTROLS
+========================================= */
 
-transition:1.5s;
 
-}
+document.getElementById("startBtn")
+.addEventListener("click",()=>{
 
+    showPage(2);
 
+});
 
-.cake.cut .top{
 
-transform:translateX(-25px)
-rotate(-3deg);
 
-}
+document.getElementById("next1")
+.addEventListener("click",()=>{
 
+    showPage(3);
 
+});
 
-.cake.cut .middle{
 
-transform:translateX(25px)
-rotate(3deg);
 
-}
+document.getElementById("next2")
+.addEventListener("click",()=>{
 
+    showPage(4);
 
+});
 
-.cake.cut .bottom{
 
-transform:scale(1.05);
 
-}
+document.getElementById("cakeBtn")
+.addEventListener("click",()=>{
 
+    showPage(5);
 
-`;
+});
 
-document.head.appendChild(style);
-// ===============================
-// CONFETTI + SPARKLE CELEBRATION
-// PART 3C
-// ===============================
 
 
-const confettiContainer =
-document.getElementById("confetti-container");
+document.getElementById("letterBtn")
+.addEventListener("click",()=>{
 
+    showPage(7);
 
-// Create Confetti Function
+});
 
-function createConfetti(){
 
 
-for(let i=0;i<150;i++){
+document.getElementById("finalBtn")
+.addEventListener("click",()=>{
 
+    showPage(8);
 
-let confetti =
-document.createElement("div");
+});
 
 
-confetti.className="confetti";
 
+document.getElementById("replayBtn")
+.addEventListener("click",()=>{
 
-confetti.style.left =
-Math.random()*100 + "vw";
+    showPage(1);
 
+});
 
-confetti.style.animationDelay =
-Math.random()*3 + "s";
 
 
-confetti.style.animationDuration =
-(3+Math.random()*3)+"s";
+/* =========================================
+   COUNTDOWN TIMER
+========================================= */
 
 
-confettiContainer.appendChild(confetti);
+let birthdayDate =
+new Date("September 07, 2026 00:00:00")
+.getTime();
 
 
 
-}
+let timer=setInterval(()=>{
 
-}
 
+    let now=new Date().getTime();
 
 
-// Add Confetti Style
+    let distance=birthdayDate-now;
 
-const confettiStyle =
-document.createElement("style");
 
 
-confettiStyle.innerHTML=`
+    let days=Math.floor(
+        distance/(1000*60*60*24)
+    );
 
-.confetti{
 
-position:absolute;
+    let hours=Math.floor(
+        (distance%(1000*60*60*24))
+        /(1000*60*60)
+    );
 
-top:-20px;
 
-width:12px;
+    let minutes=Math.floor(
+        (distance%(1000*60*60))
+        /(1000*60)
+    );
 
-height:18px;
 
-background:white;
+    let seconds=Math.floor(
+        (distance%(1000*60))
+        /1000
+    );
 
-animation:fall linear infinite;
 
-z-index:100;
 
-}
+    document.getElementById("days")
+    .innerHTML=days;
 
 
+    document.getElementById("hours")
+    .innerHTML=hours;
 
-@keyframes fall{
 
-0%{
+    document.getElementById("minutes")
+    .innerHTML=minutes;
 
-transform:
-translateY(0)
-rotate(0deg);
 
-opacity:1;
+    document.getElementById("seconds")
+    .innerHTML=seconds;
 
-}
 
 
-100%{
+    if(distance<0){
 
-transform:
-translateY(110vh)
-rotate(720deg);
+        clearInterval(timer);
 
-opacity:0;
 
-}
+        document.getElementById("days")
+        .innerHTML="00";
 
-}
+        document.getElementById("hours")
+        .innerHTML="00";
 
+        document.getElementById("minutes")
+        .innerHTML="00";
 
+        document.getElementById("seconds")
+        .innerHTML="00";
 
-.sparkle{
-
-position:absolute;
-
-font-size:25px;
-
-animation:spark 1s infinite;
-
-}
-
-
-
-@keyframes spark{
-
-0%{
-
-transform:scale(0);
-
-opacity:0;
-
-}
-
-50%{
-
-transform:scale(1.5);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:scale(0);
-
-opacity:0;
-
-}
-
-}
-
-
-`;
-
-
-document.head.appendChild(confettiStyle);
-
-
-
-// Add Celebration After Cake Cut
-
-
-cutBtn.addEventListener("click",()=>{
-
-
-setTimeout(()=>{
-
-
-createConfetti();
-
-
-createSparkles();
-
-
-
-document.getElementById("wish").innerHTML=
-
-"🎉 Happy Birthday SARO ❤️🎂<br>Have a Beautiful Day ✨";
-
+    }
 
 
 },1000);
 
 
 
+/* =========================================
+   CANDLE BLOW
+========================================= */
+
+
+const blowBtn=
+document.getElementById("blowBtn");
+
+
+const flame=
+document.querySelector(".flame");
+
+
+
+blowBtn.addEventListener("click",()=>{
+
+
+    flame.classList.add("off");
+
+
+    blowBtn.innerHTML=
+    "Candle Blown ❤️";
+
+
+});
+/* =========================================
+   CAKE CUTTING ANIMATION
+========================================= */
+
+
+const cutBtn =
+document.getElementById("cutBtn");
+
+
+const cake =
+document.querySelector(".cake");
+
+
+
+cutBtn.addEventListener("click",()=>{
+
+
+    cake.classList.add("cut");
+
+
+    cutBtn.innerHTML =
+    "Cake Cut Successfully 🎂❤️";
+
+
+    createConfetti();
+
+
 });
 
 
 
+/* =========================================
+   CONFETTI CREATION
+========================================= */
 
-// Sparkle Creation
+
+function createConfetti(){
+
+
+    for(let i=0;i<40;i++){
+
+
+        let piece =
+        document.createElement("div");
+
+
+        piece.className="confettiPiece";
+
+
+        piece.style.left =
+        Math.random()*100+"vw";
+
+
+        piece.style.animationDuration =
+        (Math.random()*3+2)+"s";
+
+
+        piece.innerHTML =
+        "✨";
+
+
+        document.body.appendChild(piece);
+
+
+
+        setTimeout(()=>{
+
+            piece.remove();
+
+        },5000);
+
+
+    }
+
+}
+
+
+
+/* =========================================
+   BALLOON EFFECT
+========================================= */
+
+
+function createBalloons(){
+
+
+    let balloonBox =
+    document.querySelector(".balloon-container");
+
+
+    for(let i=0;i<15;i++){
+
+
+        let balloon =
+        document.createElement("div");
+
+
+        balloon.className="balloon";
+
+
+        balloon.style.left =
+        Math.random()*100+"%";
+
+
+        balloon.style.animationDelay =
+        Math.random()*5+"s";
+
+
+        balloonBox.appendChild(balloon);
+
+
+
+    }
+
+
+}
+
+
+
+createBalloons();
+
+
+
+/* =========================================
+   MUSIC CONTROL
+========================================= */
+
+
+const music =
+document.getElementById("birthdayMusic");
+
+
+
+document.body.addEventListener(
+"click",
+()=>{
+
+
+    if(music.paused){
+
+
+        music.play()
+        .catch(()=>{});
+
+
+    }
+
+
+},
+{once:true}
+
+);
+
+
+
+/* =========================================
+   GALLERY IMAGE EFFECT
+========================================= */
+
+
+const photos =
+document.querySelectorAll(".photo");
+
+
+
+photos.forEach(photo=>{
+
+
+    photo.addEventListener("mouseenter",()=>{
+
+
+        photo.style.transform =
+        "scale(1.08) rotate(3deg)";
+
+
+    });
+
+
+
+    photo.addEventListener("mouseleave",()=>{
+
+
+        photo.style.transform =
+        "scale(1)";
+
+
+    });
+
+
+
+});
+
+
+
+/* =========================================
+   LOVE LETTER TYPING
+========================================= */
+
+
+const letter =
+document.getElementById("letterText");
+
+
+
+let text =
+letter.innerHTML;
+
+
+
+letter.innerHTML="";
+
+
+
+let index=0;
+
+
+
+function typeLetter(){
+
+
+    if(index < text.length){
+
+
+        letter.innerHTML +=
+        text.charAt(index);
+
+
+        index++;
+
+
+        setTimeout(typeLetter,50);
+
+
+    }
+
+
+}
+
+
+
+document
+.getElementById("letterBtn")
+.addEventListener("click",()=>{
+
+
+    showPage(7);
+
+
+    typeLetter();
+
+
+});
+/* =========================================
+   FINAL SURPRISE EFFECT
+========================================= */
+
+
+const finalBtn =
+document.getElementById("finalBtn");
+
+
+finalBtn.addEventListener("click",()=>{
+
+
+    showPage(8);
+
+
+    startFireworks();
+
+
+});
+
+
+
+/* =========================================
+   FIREWORKS CREATION
+========================================= */
+
+
+function startFireworks(){
+
+
+    for(let i=0;i<25;i++){
+
+
+        let fire =
+        document.createElement("div");
+
+
+        fire.className="fireworkParticle";
+
+
+        fire.style.left =
+        Math.random()*100+"vw";
+
+
+        fire.style.top =
+        Math.random()*80+"vh";
+
+
+        fire.style.animationDelay =
+        Math.random()*2+"s";
+
+
+        document.body.appendChild(fire);
+
+
+
+        setTimeout(()=>{
+
+
+            fire.remove();
+
+
+        },4000);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================
+   CREATE SPARKLES
+========================================= */
 
 
 function createSparkles(){
 
 
-for(let i=0;i<30;i++){
+    for(let i=0;i<30;i++){
 
 
-let sparkle =
-document.createElement("div");
+        let sparkle =
+        document.createElement("span");
 
 
-sparkle.className="sparkle";
+        sparkle.className="sparkle";
 
 
-sparkle.innerHTML="✨";
+        sparkle.innerHTML="✨";
 
 
-sparkle.style.left =
-Math.random()*100+"vw";
+        sparkle.style.left =
+        Math.random()*100+"vw";
 
 
-sparkle.style.top =
-Math.random()*100+"vh";
+        sparkle.style.top =
+        Math.random()*100+"vh";
 
 
-document.body.appendChild(sparkle);
+        sparkle.style.animationDelay =
+        Math.random()*3+"s";
+
+
+        document.body.appendChild(sparkle);
 
 
 
-setTimeout(()=>{
+        setTimeout(()=>{
 
-sparkle.remove();
 
-},3000);
+            sparkle.remove();
 
+
+        },5000);
+
+
+    }
+
+}
+
+
+
+
+/* =========================================
+   FINAL MESSAGE POPUP
+========================================= */
+
+
+function finalMessage(){
+
+
+    setTimeout(()=>{
+
+
+        alert(
+        "Happy Birthday SARO ❤️\n\n"+
+        "May your life always be filled with happiness, "+
+        "success and beautiful memories ✨"
+        );
+
+
+    },3000);
 
 
 }
 
-}
+
+
+finalBtn.addEventListener("click",()=>{
+
+
+    createSparkles();
+
+
+    finalMessage();
+
+
+});
+
+
+
+
+
+/* =========================================
+   REPLAY FUNCTION
+========================================= */
+
+
+document
+.getElementById("replayBtn")
+.addEventListener("click",()=>{
+
+
+    location.reload();
+
+
+});
+
+
+
+
+
+/* =========================================
+   KEYBOARD EFFECT
+========================================= */
+
+
+document.addEventListener(
+"keydown",
+(event)=>{
+
+
+    if(event.key==="Enter"){
+
+
+        createSparkles();
+
+
+    }
+
+
+});
+
+
+
+
+
+/* =========================================
+   PREVENT IMAGE DRAG
+========================================= */
+
+
+document.querySelectorAll("img")
+.forEach(img=>{
+
+
+    img.addEventListener(
+    "dragstart",
+    (e)=>{
+
+
+        e.preventDefault();
+
+
+    });
+
+
+});
