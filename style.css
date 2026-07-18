@@ -1434,3 +1434,145 @@ button:hover{
     }
 
 }
+/* Dynamic Confetti */
+
+.confettiPiece{
+
+    position:fixed;
+
+    top:-30px;
+
+    font-size:25px;
+
+    animation:drop 4s linear forwards;
+
+    z-index:999;
+
+}
+
+@keyframes drop{
+
+    from{
+
+        transform:translateY(-50px) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* Firework */
+
+.fireworkParticle{
+
+    position:fixed;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:yellow;
+
+    animation:boom 2s ease-out forwards;
+
+}
+
+@keyframes boom{
+
+    0%{
+
+        transform:scale(.2);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(8);
+
+        opacity:0;
+
+    }
+
+}
+/* =========================================
+   BALLOONS
+========================================= */
+
+.balloon{
+
+    position:fixed;
+
+    bottom:-150px;
+
+    width:60px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    animation:balloonFly 12s linear forwards;
+
+    z-index:998;
+
+}
+
+.balloon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+
+    height:90px;
+
+    background:white;
+
+    left:50%;
+
+    top:70px;
+
+}
+
+.balloon:nth-child(1){background:#ff4d6d;}
+.balloon:nth-child(2){background:#ffbe0b;}
+.balloon:nth-child(3){background:#3a86ff;}
+.balloon:nth-child(4){background:#06d6a0;}
+.balloon:nth-child(5){background:#ff66c4;}
+.balloon:nth-child(6){background:#8338ec;}
+.balloon:nth-child(7){background:#00b4d8;}
+.balloon:nth-child(8){background:#f72585;}
+
+@keyframes balloonFly{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
