@@ -1240,3 +1240,16 @@ color:#ffd6f3;
 
 
 }
+#galleryPage,
+#letterPage,
+#finalPage{
+
+background:
+
+linear-gradient(
+135deg,
+rgba(255,182,193,.7),
+rgba(255,105,180,.5)
+);
+
+}
