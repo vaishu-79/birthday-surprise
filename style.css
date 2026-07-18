@@ -728,3 +728,98 @@ height:350px;
 
 
 }
+/* =========================
+   CAKE CUT ANIMATION
+========================= */
+
+
+.knifeMove{
+
+    animation:knifeCut 1.5s forwards;
+
+}
+
+
+@keyframes knifeCut{
+
+
+0%{
+
+transform:translateX(0) rotate(0deg);
+
+}
+
+
+100%{
+
+transform:translateX(-160px)
+rotate(-60deg);
+
+}
+
+}
+
+
+
+
+.cakeCut{
+
+animation:cakeOpen 1.5s forwards;
+
+}
+
+
+
+@keyframes cakeOpen{
+
+
+0%{
+
+transform:scale(1);
+
+}
+
+
+100%{
+
+transform:scale(.95);
+
+}
+
+}
+
+
+
+/* Smoke */
+
+
+.smokeShow{
+
+animation:smoke 2s forwards;
+
+}
+
+
+
+@keyframes smoke{
+
+
+0%{
+
+opacity:1;
+
+transform:translateY(0) scale(.5);
+
+}
+
+
+100%{
+
+opacity:0;
+
+transform:translateY(-100px) scale(2);
+
+}
+
+
+}
