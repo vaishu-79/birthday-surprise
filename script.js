@@ -750,3 +750,127 @@ changePage(letterPage);
 
 
 };
+// =====================================
+// LOVE LETTER
+// =====================================
+
+
+const letterPage = document.getElementById("letterPage");
+
+const letterText = document.getElementById("letterText");
+
+const finalBtn = document.getElementById("finalBtn");
+
+
+
+
+
+const message = `
+
+Dear Saro ❤️
+
+Happy Birthday My Love 🎂
+
+You are the most beautiful
+part of my life.
+
+Thank you for bringing
+so much happiness
+and smiles into my world.
+
+I wish our bond stays
+forever and ever.
+
+Always stay happy ❤️
+
+With lots of love,
+
+Vaishnavi ❤️
+
+`;
+
+
+
+
+
+let letterIndex = 0;
+
+
+
+function typeLetter(){
+
+
+if(letterIndex < message.length){
+
+
+letterText.innerHTML += 
+message.charAt(letterIndex);
+
+
+letterIndex++;
+
+
+setTimeout(typeLetter,50);
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+// When Love Letter page opens
+
+
+letterBtn.onclick=function(){
+
+
+changePage(letterPage);
+
+
+
+letterText.innerHTML="";
+
+
+letterIndex=0;
+
+
+typeLetter();
+
+
+
+};
+
+
+
+
+
+
+// =====================================
+// FINAL BUTTON
+// =====================================
+
+
+finalBtn.onclick=function(){
+
+
+changePage(finalPage);
+
+
+
+createConfetti();
+
+
+startHearts();
+
+
+fireworks();
+
+
+};
