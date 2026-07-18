@@ -598,7 +598,21 @@ transform:scale(1.05);
 
 
 }
+#galleryImage{
 
+transition:0.5s;
+
+opacity:1;
+
+}
+
+
+
+.gallery img{
+
+animation:imageGlow 3s infinite;
+
+}
 
 
 
@@ -1017,6 +1031,98 @@ to{
 transform:scale(15);
 
 opacity:0;
+
+}
+
+
+}
+/* =========================
+       LOVE LETTER ANIMATION
+========================= */
+
+
+.letterBox{
+
+animation:letterOpen 1s ease;
+
+}
+
+
+@keyframes letterOpen{
+
+
+from{
+
+transform:
+
+scale(.5)
+rotateX(90deg);
+
+opacity:0;
+
+}
+
+
+to{
+
+transform:
+
+scale(1)
+rotateX(0deg);
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+
+#letterText{
+
+font-family:'Great Vibes',cursive;
+
+font-size:32px;
+
+color:#ffe6f7;
+
+min-height:180px;
+
+line-height:45px;
+
+}
+
+
+
+/* Final Button Glow */
+
+
+#finalBtn{
+
+animation:buttonGlow 2s infinite;
+
+}
+
+
+@keyframes buttonGlow{
+
+
+0%,100%{
+
+box-shadow:
+
+0 0 20px pink;
+
+}
+
+
+50%{
+
+box-shadow:
+
+0 0 50px hotpink;
 
 }
 
