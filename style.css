@@ -20,9 +20,45 @@ body{
 
     overflow:hidden;
 
-    background:#050816;
+    background:
+    linear-gradient(
+        135deg,
+        #20002c,
+        #cbb4d4,
+        #ff758c,
+        #ff7eb3
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 12s ease infinite;
 
     color:white;
+
+}
+
+
+@keyframes bgMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
 
 }
 
