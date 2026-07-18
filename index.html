@@ -1,99 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday SARO ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday SARO ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-    <!-- Background -->
-    <div class="background"></div>
 
-    <!-- Floating Hearts -->
-    <div class="hearts"></div>
+<!-- WARNING PAGE -->
 
-    <!-- Birthday Message -->
-    <div class="title">
-        <h1>🎉 Happy Birthday SARO ❤️ 🎉</h1>
-        <p>You are the best gift in my life 💖</p>
-    </div>
+<div id="warningPage" class="page">
 
-    <!-- Cake -->
-    <div class="cake-container">
+    <div class="card">
 
-        <!-- Candle -->
-        <div class="candle">
-            <div class="flame" id="flame"></div>
-        </div>
+        <h1>⚠️ Warning ⚠️</h1>
 
-        <!-- Cake Name -->
-        <div class="cake-text">
-            Happy Birthday
-            <br>
-            <span>SARO ❤️</span>
-        </div>
+        <p>
+            This website contains a very special surprise
+            made with lots of love ❤️
+        </p>
 
-        <!-- Cake Layers -->
-        <div class="cake">
+        <p>
+            Only SARO is allowed to enter 😌💖
+        </p>
 
-            <div class="icing"></div>
-
-            <div class="layer top"></div>
-
-            <div class="cream cream1"></div>
-            <div class="cream cream2"></div>
-            <div class="cream cream3"></div>
-
-            <div class="layer middle"></div>
-
-            <div class="cream cream4"></div>
-            <div class="cream cream5"></div>
-            <div class="cream cream6"></div>
-
-            <div class="layer bottom"></div>
-
-            <!-- Cake Cut Line -->
-            <div class="cut-line"></div>
-
-        </div>
-
-    </div>
-
-    <!-- Buttons -->
-
-    <div class="buttons">
-
-        <button id="blowBtn">
-            🕯 Blow Candle
-        </button>
-
-        <button id="cutBtn">
-            🔪 Cut Cake
+        <button onclick="showLogin()">
+            Continue 🎁
         </button>
 
     </div>
 
-    <!-- Birthday Wish -->
-    <div class="message">
+</div>
 
-        <h2 id="wish">
-            Make a Wish... ✨
-        </h2>
+
+
+
+
+<!-- LOGIN PAGE -->
+
+
+<div id="loginPage" class="page hidden">
+
+    <div class="card">
+
+        <h1>
+            🔐 Secret Login ❤️
+        </h1>
+
+
+        <p>
+            Enter your details to unlock your surprise
+        </p>
+
+
+        <input 
+        type="text"
+        id="name"
+        placeholder="Enter your name">
+
+
+        <input 
+        type="password"
+        id="pass"
+        placeholder="Enter password">
+
+
+        <button onclick="checkLogin()">
+            Unlock 💖
+        </button>
+
+
+        <p id="wrong"></p>
+
 
     </div>
 
-    <!-- Confetti -->
-    <div id="confetti-container"></div>
+</div>
 
-    <!-- Music -->
-    <audio id="birthdaySong" loop>
-        <source src="birthday.mp3" type="audio/mpeg">
-    </audio>
 
-    <script src="script.js"></script>
+
+
+
+
+
+<!-- BIRTHDAY PAGE -->
+
+
+<div id="birthdayPage" class="hidden">
+
+
+<div class="container">
+
+
+<h1>
+🎉 Happy Birthday SARO ❤️
+</h1>
+
+
+<p class="love">
+
+You are the most precious person in my life 💕
+
+</p>
+
+
+
+
+<!-- IMAGE -->
+
+<img src="images/saro.jpg"
+class="photo"
+alt="SARO">
+
+
+
+
+
+
+<!-- CAKE -->
+
+
+<div class="cake-box">
+
+
+<div class="candle">
+
+<div id="flame">
+
+🔥
+
+</div>
+
+</div>
+
+
+
+<div id="cake">
+
+
+<div class="cake-name">
+
+Happy Birthday
+
+<br>
+
+<span>
+SARO ❤️
+</span>
+
+</div>
+
+
+<div class="top-layer"></div>
+
+<div class="middle-layer"></div>
+
+<div class="bottom-layer"></div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- BUTTONS -->
+
+
+<div class="buttons">
+
+
+<button onclick="blowCandle()">
+
+🕯 Blow Candle
+
+</button>
+
+
+
+<button onclick="cutCake()">
+
+🔪 Cut Cake
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<h2 id="wish">
+
+Make a Wish ✨
+
+</h2>
+
+
+
+
+
+<!-- FINAL MESSAGE -->
+
+
+<div id="finalMessage">
+
+
+<h2>
+❤️ For My Special Person ❤️
+</h2>
+
+
+<p>
+
+Thank you for being part of my life.
+May your smile always stay forever.
+
+Happy Birthday SARO 🎂💕
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- CUSTOM SONG -->
+
+
+<audio id="birthdaySong" loop>
+
+<source src="music/saro-song.mp3" type="audio/mp3">
+
+</audio>
+
+
+
+
+
+
+<script src="script.js"></script>
+
 
 </body>
+
 </html>
