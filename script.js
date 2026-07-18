@@ -874,3 +874,53 @@ fireworks();
 
 
 };
+// =====================================
+// FINAL SURPRISE
+// =====================================
+
+
+const gift = document.querySelector(".gift");
+
+
+
+
+
+gift.onclick=function(){
+
+
+
+// Gift animation
+
+gift.classList.add("giftOpen");
+
+
+
+// Celebration
+
+createConfetti();
+
+
+startHearts();
+
+
+startButterflies();
+
+
+fireworks();
+
+
+
+// Change text
+
+
+setTimeout(()=>{
+
+
+gift.innerHTML="💖";
+
+
+},1000);
+
+
+
+};
