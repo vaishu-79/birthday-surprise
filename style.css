@@ -1222,3 +1222,111 @@ rgba(255,105,180,.5)
 );
 
 }
+/* =========================
+     SMOOTH PAGE TRANSITION
+========================= */
+
+.page{
+
+transition:1s ease;
+
+}
+
+
+
+/* Pink Romantic Background */
+
+#warningPage,
+#loginPage,
+#birthdayPage,
+#countdownPage,
+#cakePage,
+#galleryPage,
+#letterPage,
+#finalPage{
+
+background:
+
+linear-gradient(
+135deg,
+#ffafbd,
+#ffc3a0,
+#ff9a9e
+);
+
+}
+
+
+
+
+/* Gallery Auto Glow */
+
+.gallery{
+
+animation:galleryFloat 3s infinite;
+
+}
+
+
+@keyframes galleryFloat{
+
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+
+
+/* Love Letter Cursor */
+
+
+#letterText::after{
+
+content:"|";
+
+animation:cursor .7s infinite;
+
+}
+
+
+@keyframes cursor{
+
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+/* Final Heart */
+
+
+.finalTitle{
+
+font-size:75px;
+
+animation:heartBeat 1.5s infinite;
+
+}
+
+
+
+@keyframes heartBeat{
+
+
+50%{
+
+transform:scale(1.1);
+
+}
+
+}
