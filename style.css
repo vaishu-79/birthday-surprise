@@ -12,33 +12,31 @@
     font-family:'Poppins',sans-serif;
 }
 
-
 body{
 
-    width:100%;
-    height:100vh;
+    margin:0;
 
     overflow:hidden;
 
-    background:
-    linear-gradient(
+    color:white;
+
+    background:linear-gradient(
         135deg,
-        #20002c,
-        #cbb4d4,
-        #ff758c,
-        #ff7eb3
+        #C8B6FF,
+        #A0C4FF,
+        #BDE0FE,
+        #D0BCFF,
+        #B8E1FF
     );
 
-    background-size:400% 400%;
+    background-size:500% 500%;
 
-    animation:bgMove 12s ease infinite;
-
-    color:white;
+    animation:bgAnimation 15s ease infinite;
 
 }
 
 
-@keyframes bgMove{
+@keyframes bgAnimation{
 
     0%{
 
@@ -46,13 +44,11 @@ body{
 
     }
 
-
     50%{
 
         background-position:100% 50%;
 
     }
-
 
     100%{
 
@@ -61,7 +57,6 @@ body{
     }
 
 }
-
 
 
 /* =========================================
