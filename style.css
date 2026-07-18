@@ -823,3 +823,202 @@ transform:translateY(-100px) scale(2);
 
 
 }
+/* =========================
+   HEARTS
+========================= */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    font-size:30px;
+
+    animation:heartFly 5s linear forwards;
+
+    z-index:50;
+
+}
+
+
+
+@keyframes heartFly{
+
+
+0%{
+
+transform:
+translateY(0)
+scale(.5);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+translateY(-110vh)
+translateX(100px)
+scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+/* =========================
+   BUTTERFLIES
+========================= */
+
+
+.butterfly{
+
+position:fixed;
+
+bottom:-50px;
+
+font-size:35px;
+
+animation:flyButterfly 8s linear forwards;
+
+z-index:50;
+
+}
+
+
+
+@keyframes flyButterfly{
+
+
+0%{
+
+transform:
+translateX(-50px)
+translateY(0);
+
+}
+
+
+50%{
+
+transform:
+translateX(50vw)
+translateY(-200px)
+rotate(20deg);
+
+}
+
+
+100%{
+
+transform:
+translateX(110vw)
+translateY(-100vh)
+rotate(-20deg);
+
+}
+
+
+}
+
+
+
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:12px;
+
+height:20px;
+
+animation:confettiFall 4s linear forwards;
+
+z-index:60;
+
+}
+
+
+
+@keyframes confettiFall{
+
+
+100%{
+
+transform:
+translateY(110vh)
+rotate(720deg);
+
+}
+
+
+}
+
+
+
+
+
+
+/* =========================
+   FIREWORK
+========================= */
+
+
+.firework{
+
+position:fixed;
+
+width:10px;
+
+height:10px;
+
+background:white;
+
+border-radius:50%;
+
+animation:explode 1s ease-out forwards;
+
+z-index:70;
+
+}
+
+
+
+@keyframes explode{
+
+
+from{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+
+to{
+
+transform:scale(15);
+
+opacity:0;
+
+}
+
+
+}
