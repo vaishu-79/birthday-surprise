@@ -1359,3 +1359,47 @@ button:hover{
 
 
 }
+/* =========================================
+   CAKE CUT EFFECT
+========================================= */
+
+.cake.cut .topLayer{
+
+    transform:rotate(-15deg) translateX(-20px);
+
+}
+
+
+.cake.cut .middleLayer{
+
+    transform:translateX(20px);
+
+}
+
+
+.cake.cut{
+
+    animation:cakeShake .5s;
+
+}
+
+
+@keyframes cakeShake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-10px);
+    }
+
+    50%{
+        transform:translateX(10px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
