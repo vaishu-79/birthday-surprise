@@ -1,153 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Happy Birthday SARO❤️</title>
+    <title>Happy Birthday SARO ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-<div class="hearts">
-    <span>❤️</span>
-    <span>💖</span>
-    <span>💕</span>
-    <span>💗</span>
-    <span>💝</span>
-    <span>❤️</span>
-    <span>💞</span>
-</div>
+    <!-- Background -->
+    <div class="background"></div>
 
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
 
-<!-- Warning Page -->
+    <!-- Birthday Message -->
+    <div class="title">
+        <h1>🎉 Happy Birthday SARO ❤️ 🎉</h1>
+        <p>You are the best gift in my life 💖</p>
+    </div>
 
-<div id="warning-page">
+    <!-- Cake -->
+    <div class="cake-container">
 
-    <h1>⚠️ Warning ⚠️</h1>
+        <!-- Candle -->
+        <div class="candle">
+            <div class="flame" id="flame"></div>
+        </div>
 
-    <p>
-        This website is made only for the most special person in my life ❤️
-    </p>
+        <!-- Cake Name -->
+        <div class="cake-text">
+            Happy Birthday
+            <br>
+            <span>SARO ❤️</span>
+        </div>
 
-    <h2>
-        Are You My SARO? 🥺❤️
-    </h2>
+        <!-- Cake Layers -->
+        <div class="cake">
 
-    <p class="loveQuote">
-        "You are the best gift that life has given me. ❤️"
-    </p>
+            <div class="icing"></div>
 
+            <div class="layer top"></div>
 
-    <button onclick="showLogin()">
-        Continue ❤️
-    </button>
+            <div class="cream cream1"></div>
+            <div class="cream cream2"></div>
+            <div class="cream cream3"></div>
 
-</div>
+            <div class="layer middle"></div>
 
+            <div class="cream cream4"></div>
+            <div class="cream cream5"></div>
+            <div class="cream cream6"></div>
 
+            <div class="layer bottom"></div>
 
-<!-- Login Page -->
+            <!-- Cake Cut Line -->
+            <div class="cut-line"></div>
 
-<div id="login-page" style="display:none;">
+        </div>
 
-    <h1>
-        Welcome My Love ❤️
-    </h1>
+    </div>
 
+    <!-- Buttons -->
 
-    <input 
-    type="text" 
-    id="username"
-    placeholder="Username">
+    <div class="buttons">
 
+        <button id="blowBtn">
+            🕯 Blow Candle
+        </button>
 
-    <br><br>
+        <button id="cutBtn">
+            🔪 Cut Cake
+        </button>
 
+    </div>
 
-    <input 
-    type="password"
-    id="password"
-    placeholder="Password">
+    <!-- Birthday Wish -->
+    <div class="message">
 
+        <h2 id="wish">
+            Make a Wish... ✨
+        </h2>
 
-    <br><br>
+    </div>
 
+    <!-- Confetti -->
+    <div id="confetti-container"></div>
 
-    <button onclick="login()">
-        Unlock My Surprise ❤️
-    </button>
+    <!-- Music -->
+    <audio id="birthdaySong" loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
 
-</div>
-<div id="cake-page" style="display:none;">
+    <script src="script.js"></script>
 
-    <h1>🎂 Birthday Cake 🎂</h1>
-
-    <div class="knife">
-    🔪
-</div>
-<div class="cake">
-
-    <img src="birthday cake.png" class="cake-image" alt="Birthday Cake">
-
-</div>
-    <button onclick="cutCake()">
-        🎉 Cut the Cake
-    </button>
-
-    <h2 id="message"></h2>
-
-</div>
-
-<!-- Final Birthday Page -->
-
-<div id="birthday-page" style="display:none;">
-
-    <h1>
-        🎉 HAPPY BIRTHDAY SARO 😘🤎
-    </h1>
-
-
-    <img src="saro.jpg" class="photo">
-
-
-    <p>
-        You are the most special person in my life ❤️
-        <br><br>
-        May your life always be filled with happiness,
-success, peace and endless smiles.
-        <br><br>
-Thank you for being the most beautiful part of my life.
-
-<br><br>
-
-No matter what happens,
-I will always stand beside you.
-
-<br><br>
-
-🥰 I Love You Forever 🥰
-    </p>
-
-
-    <h2>
-         By Vaishu 💚
-    </h2>
-
-
-</div>
-
-
-
-<script src="script.js"></script>
-<canvas id="confetti"></canvas>
-<audio id="music" loop>
-    <source src="songs/birthday.mp3" type="audio/mpeg">
-</audio>
 </body>
-
 </html>
