@@ -1,242 +1,353 @@
-// ==========================================
-// PASSWORD
-// ==========================================
+// =====================================
+// ELEMENTS
+// =====================================
 
-const PASSWORD = "ILOVESARO";
-
-
-// ==========================================
-// PAGES
-// ==========================================
 
 const warningPage = document.getElementById("warningPage");
+
 const loginPage = document.getElementById("loginPage");
+
 const birthdayPage = document.getElementById("birthdayPage");
+
 const countdownPage = document.getElementById("countdownPage");
+
 const cakePage = document.getElementById("cakePage");
 
 
-// ==========================================
-// BUTTONS
-// ==========================================
+const continueBtn = document.getElementById("continueBtn");
 
-const warningBtn = document.getElementById("warningBtn");
 const loginBtn = document.getElementById("loginBtn");
-const startCountdown = document.getElementById("startCountdown");
-const blowBtn = document.getElementById("blowBtn");
+
+const celebrateBtn = document.getElementById("celebrateBtn");
 
 
-// ==========================================
-// ELEMENTS
-// ==========================================
+const password = document.getElementById("password");
 
-const passwordInput = document.getElementById("password");
-const loginError = document.getElementById("loginError");
-
-const countdownNumber = document.getElementById("countdownNumber");
-
-const flame = document.getElementById("flame");
-const smoke = document.getElementById("smoke");
+const errorMsg = document.getElementById("errorMsg");
 
 
-// ==========================================
+const countdown = document.getElementById("countdown");
+
+
+const song = document.getElementById("birthdaySong");
+
+
+
+// =====================================
+// PASSWORD
+// =====================================
+
+
+const secretPassword = "SARO";
+
+
+
+
+// =====================================
 // PAGE CHANGE FUNCTION
-// ==========================================
+// =====================================
 
-function showPage(next){
 
-document.querySelectorAll(".page").forEach(page=>{
+function changePage(page){
 
-page.classList.remove("active");
+
+document.querySelectorAll(".page").forEach(item=>{
+
+
+item.classList.remove("active");
+
 
 });
 
-next.classList.add("active");
+
+page.classList.add("active");
+
 
 }
 
 
-// ==========================================
+
+
+
+
+// =====================================
 // WARNING PAGE
-// ==========================================
+// =====================================
 
-warningBtn.onclick=()=>{
 
-showPage(loginPage);
+continueBtn.onclick=function(){
+
+
+changePage(loginPage);
+
 
 };
 
 
-// ==========================================
+
+
+
+
+
+// =====================================
 // LOGIN
-// ==========================================
+// =====================================
 
-loginBtn.onclick=()=>{
 
-if(passwordInput.value===PASSWORD){
+loginBtn.onclick=function(){
 
-showPage(birthdayPage);
 
-loginError.innerHTML="";
+
+if(password.value === secretPassword){
+
+
+errorMsg.innerHTML="";
+
+
+changePage(birthdayPage);
+
+
 
 }
 
 else{
 
-loginError.innerHTML="❌ Wrong Password ❤️";
 
-passwordInput.value="";
+errorMsg.innerHTML="❌ Wrong Password ❤️";
+
+
+password.value="";
+
 
 }
+
+
 
 };
 
 
-// ==========================================
+
+
+
+
+
+// =====================================
+// CELEBRATION START
+// =====================================
+
+
+celebrateBtn.onclick=function(){
+
+
+
+// Play Song
+
+song.play();
+
+
+
+// Go Countdown
+
+changePage(countdownPage);
+
+
+
+startCountdown();
+
+
+
+};
+
+
+
+
+
+
+
+// =====================================
 // COUNTDOWN
-// ==========================================
+// =====================================
 
-startCountdown.onclick=()=>{
 
-showPage(countdownPage);
+function startCountdown(){
 
-let count=3;
 
-countdownNumber.innerHTML=count;
+let number = 3;
 
-let timer=setInterval(()=>{
 
-count--;
 
-if(count>0){
+countdown.innerHTML=number;
 
-countdownNumber.innerHTML=count;
+
+
+let timer=setInterval(function(){
+
+
+number--;
+
+
+
+if(number>0){
+
+
+countdown.innerHTML=number;
+
+
 
 }
 
+
 else{
+
 
 clearInterval(timer);
 
-countdownNumber.innerHTML="🎉";
 
-setTimeout(()=>{
 
-showPage(cakePage);
+countdown.innerHTML="🎉";
+
+
+setTimeout(function(){
+
+
+
+changePage(cakePage);
+
+
 
 },1500);
 
+
+
 }
+
+
 
 },1000);
 
-};
 
 
-// ==========================================
+}
+
+
+
+
+
+
+
+// =====================================
+// ENTER KEY LOGIN
+// =====================================
+
+
+password.addEventListener("keypress",function(event){
+
+
+if(event.key==="Enter"){
+
+
+loginBtn.click();
+
+
+}
+
+
+});
+// =====================================
+// CAKE ELEMENTS
+// =====================================
+
+
+const flame = document.getElementById("flame");
+
+const blowBtn = document.getElementById("blowBtn");
+
+const cutBtn = document.getElementById("cutBtn");
+
+const knife = document.getElementById("knife");
+
+const smoke = document.getElementById("smoke");
+
+const cake = document.querySelector(".cake");
+
+
+
+
+// =====================================
 // BLOW CANDLE
-// ==========================================
+// =====================================
 
-blowBtn.onclick=()=>{
 
-// Flame OFF
+blowBtn.onclick=function(){
+
+
+// Flame off
 
 flame.style.display="none";
 
 
-// Smoke
 
-smoke.classList.add("smoke");
+// Smoke effect
 
-smoke.style.opacity="1";
+smoke.classList.add("smokeShow");
 
 
-// Disable Button
+
+// Button change
+
+blowBtn.innerHTML="🕯️ Candle Blown ❤️";
+
+
+
+// Disable blow button
 
 blowBtn.disabled=true;
 
-blowBtn.innerHTML="🕯️ Candle Blown";
 
 
-// Smoke disappear
+// Enable cut button
 
-setTimeout(()=>{
+cutBtn.disabled=false;
 
-smoke.style.opacity="0";
 
-smoke.classList.remove("smoke");
-
-},2000);
 
 };
 
 
-// ==========================================
-// ENTER KEY LOGIN
-// ==========================================
-
-passwordInput.addEventListener("keypress",function(e){
-
-if(e.key==="Enter"){
-
-loginBtn.click();
-
-}
-
-});
-// ==========================================
-// CAKE CUT
-// ==========================================
-
-const knife = document.getElementById("knife");
-const cakeLeft = document.getElementById("cakeLeft");
-const cakeRight = document.getElementById("cakeRight");
-const cutCakeBtn = document.getElementById("cutCakeBtn");
-
-// Blow candle complete aanadhum Cut button enable
-blowBtn.onclick = () => {
-
-    flame.style.display = "none";
-
-    smoke.classList.add("smoke");
-    smoke.style.opacity = "1";
-
-    blowBtn.disabled = true;
-    blowBtn.innerHTML = "🕯️ Candle Blown";
-
-    cutCakeBtn.disabled = false;
-
-    setTimeout(() => {
-
-        smoke.style.opacity = "0";
-        smoke.classList.remove("smoke");
-
-    },2000);
-
-};
 
 
-// Cake Cut
-cutCakeBtn.onclick = () => {
 
-    // Knife animation
-    knife.classList.add("knifeMove");
 
-    setTimeout(() => {
+// =====================================
+// CUT CAKE
+// =====================================
 
-        cakeLeft.classList.add("splitLeft");
 
-        cakeRight.classList.add("splitRight");
+cutBtn.onclick=function(){
 
-        // Confetti
-        createConfetti();
 
-        // Hearts
-        startHearts();
+// Knife animation
 
-        // Butterflies
-        startButterflies();
+knife.classList.add("knifeMove");
 
-    },1700);
+
+
+// After knife cut
+
+setTimeout(function(){
+
+
+cake.classList.add("cakeCut");
+
+
+// Button text
+
+cutBtn.innerHTML="🎂 Cake Cut Successfully ❤️";
+
+
+
+},1500);
+
+
 
 };
