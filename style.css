@@ -1,1 +1,1361 @@
+/* =========================================
+   GOOGLE FONT
+========================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:#050816;
+
+    color:white;
+
+}
+
+
+
+/* =========================================
+   PAGE SYSTEM
+========================================= */
+
+
+.page{
+
+    position:absolute;
+
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+
+.page.active{
+
+    display:flex;
+
+}
+
+
+
+/* =========================================
+   LOADER
+========================================= */
+
+
+#loader{
+
+    position:fixed;
+
+    width:100%;
+    height:100vh;
+
+    background:#050816;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+
+#loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+
+
+.loader-heart{
+
+    font-size:80px;
+
+    animation:heartbeat 1s infinite;
+
+}
+
+
+#loader h1{
+
+    margin-top:20px;
+
+    font-size:28px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.3);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/* =========================================
+   GLASS CARD
+========================================= */
+
+
+.glass{
+
+    width:450px;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 0 40px rgba(255,20,147,0.35);
+
+}
+
+
+
+.glass h1{
+
+    font-size:45px;
+
+}
+
+
+
+.glass p{
+
+    margin-top:20px;
+
+    line-height:32px;
+
+    color:#ddd;
+
+}
+
+
+
+/* =========================================
+   TITLES
+========================================= */
+
+
+.title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:75px;
+
+    color:#ffb6e6;
+
+    text-shadow:
+
+    0 0 20px hotpink,
+
+    0 0 50px deeppink;
+
+}
+
+
+
+.name{
+
+    margin-top:10px;
+
+    font-size:45px;
+
+    color:white;
+
+}
+
+
+
+.subtitle{
+
+    font-size:18px;
+
+}
+
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+
+button{
+
+    margin-top:30px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:white;
+
+
+    background:
+
+    linear-gradient(
+        45deg,
+        #ff1493,
+        #ff4d6d
+    );
+
+
+    transition:.4s;
+
+}
+
+
+
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 0 20px hotpink,
+
+    0 0 50px deeppink;
+
+}
+
+
+
+/* =========================================
+   BACKGROUND STARS
+========================================= */
+
+
+.stars{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100%;
+
+
+    background-image:
+
+    radial-gradient(
+    white 1px,
+    transparent 1px);
+
+
+    background-size:45px 45px;
+
+
+    animation:starsMove 50s linear infinite;
+
+
+    z-index:-5;
+
+}
+
+
+
+@keyframes starsMove{
+
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+
+    to{
+
+        transform:translateY(-500px);
+
+    }
+
+}
+
+
+
+/* =========================================
+   GLOW BACKGROUND
+========================================= */
+
+
+.glow{
+
+    position:fixed;
+
+    width:600px;
+
+    height:600px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    radial-gradient(
+    hotpink,
+    transparent 70%);
+
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+
+    z-index:-4;
+
+}
+
+
+
+.glow1{
+
+    top:-200px;
+
+    left:-150px;
+
+}
+
+
+
+.glow2{
+
+    bottom:-200px;
+
+    right:-150px;
+
+}
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.hearts{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+}
+
+
+.hearts::before{
+
+    content:"❤️ 💖 💕 ❤️ 💗 💞";
+
+    position:absolute;
+
+    bottom:-100px;
+
+    left:20%;
+
+    font-size:35px;
+
+    animation:heartFloat 18s linear infinite;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(100vh);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* =========================================
+   FADE ANIMATION
+========================================= */
+
+
+.fadeIn{
+
+    animation:fadeIn 1.5s ease;
+
+}
+
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   MESSAGE BOX
+========================================= */
+
+
+.messageBox{
+
+    width:700px;
+
+    max-width:90%;
+
+    padding:45px;
+
+    border-radius:30px;
+
+
+    background:rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border:1px solid rgba(255,255,255,.2);
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 0 50px rgba(255,20,147,.35);
+
+}
+
+
+
+.messageBox h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    color:#ffb6e6;
+
+}
+
+
+
+.messageBox p{
+
+    margin-top:25px;
+
+    font-size:19px;
+
+    line-height:35px;
+
+    color:#eee;
+
+}
+
+
+
+/* =========================================
+   TYPING EFFECT
+========================================= */
+
+
+.typing{
+
+    overflow:hidden;
+
+    white-space:normal;
+
+}
+
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.timeBox{
+
+    width:100px;
+
+    height:100px;
+
+
+    border-radius:20px;
+
+
+    background:rgba(255,255,255,.1);
+
+
+    border:1px solid rgba(255,255,255,.25);
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+
+    box-shadow:
+
+    0 0 25px rgba(255,20,147,.3);
+
+}
+
+
+
+.timeBox span{
+
+    font-size:35px;
+
+    font-weight:700;
+
+    color:#ffb6e6;
+
+}
+
+
+
+.timeBox small{
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+
+
+/* =========================================
+   CAKE AREA BASIC
+========================================= */
+
+
+.cake-area{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+
+
+.cakeTitle{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:60px;
+
+    color:#ffb6e6;
+
+
+    text-shadow:
+
+    0 0 20px hotpink;
+
+}
+
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+
+.galleryBox{
+
+    width:85%;
+
+    text-align:center;
+
+}
+
+
+
+.galleryBox h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    color:#ffb6e6;
+
+}
+
+
+
+.gallery{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+
+
+.photo{
+
+    width:220px;
+
+    height:260px;
+
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+
+    background:#ffffff15;
+
+
+    box-shadow:
+
+    0 0 30px rgba(255,20,147,.4);
+
+
+    transition:.5s;
+
+}
+
+
+
+.photo:hover{
+
+    transform:scale(1.08) rotate(3deg);
+
+}
+
+
+
+.photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+/* =========================================
+   LOVE LETTER
+========================================= */
+
+
+.letterBox{
+
+    width:650px;
+
+    max-width:90%;
+
+
+    padding:45px;
+
+
+    background:rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(18px);
+
+
+    border-radius:30px;
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 0 45px rgba(255,20,147,.35);
+
+}
+
+
+
+.letterBox h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:60px;
+
+    color:#ffb6e6;
+
+}
+
+
+
+.letterBox p{
+
+    margin-top:25px;
+
+    font-size:19px;
+
+    line-height:35px;
+
+}
+/* =========================================
+   3D BIRTHDAY CAKE
+========================================= */
+
+
+.cake{
+
+    position:relative;
+
+    width:280px;
+
+    height:220px;
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+
+
+/* Cake Layers */
+
+.layer{
+
+    width:280px;
+
+    border-radius:20px 20px 15px 15px;
+
+    box-shadow:
+
+    inset 0 -10px 20px rgba(0,0,0,.25),
+
+    0 15px 30px rgba(0,0,0,.4);
+
+}
+
+
+
+/* Bottom Layer */
+
+.bottomLayer{
+
+    height:80px;
+
+    background:
+
+    linear-gradient(
+        #ff7eb3,
+        #ff4d6d
+    );
+
+}
+
+
+
+/* Middle Layer */
+
+.middleLayer{
+
+    height:60px;
+
+    width:230px;
+
+    background:
+
+    linear-gradient(
+        #ffd6e8,
+        #ff85b3
+    );
+
+}
+
+
+
+/* Top Layer */
+
+.topLayer{
+
+    height:50px;
+
+    width:180px;
+
+    background:
+
+    linear-gradient(
+        #fff0f6,
+        #ffb6d9
+    );
+
+    position:relative;
+
+}
+
+
+
+.topLayer span{
+
+    position:absolute;
+
+    width:25px;
+
+    height:35px;
+
+    background:white;
+
+    border-radius:0 0 20px 20px;
+
+    top:0;
+
+    left:30px;
+
+}
+
+
+
+/* =========================================
+   CANDLE
+========================================= */
+
+
+.candle{
+
+    position:absolute;
+
+    top:-80px;
+
+    width:20px;
+
+    height:75px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #fff,
+        #ffb6e6
+    );
+
+    border-radius:10px;
+
+}
+
+
+
+.candle::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:20px;
+
+    left:0;
+
+    width:100%;
+
+    height:8px;
+
+    background:#ff1493;
+
+}
+
+
+
+/* Flame */
+
+.flame{
+
+    position:absolute;
+
+    top:-35px;
+
+    left:3px;
+
+    width:15px;
+
+    height:30px;
+
+    background:
+
+    linear-gradient(
+        orange,
+        yellow
+    );
+
+    border-radius:
+
+    50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    animation:flameMove .8s infinite alternate;
+
+    box-shadow:
+
+    0 0 20px orange;
+
+}
+
+
+
+@keyframes flameMove{
+
+    from{
+
+        transform:
+        rotate(-45deg) scale(1);
+
+    }
+
+    to{
+
+        transform:
+        rotate(-45deg) scale(1.2);
+
+    }
+
+}
+
+
+
+/* =========================================
+   CANDLE OFF EFFECT
+========================================= */
+
+
+.flame.off{
+
+    display:none;
+
+}
+
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+
+.balloon-container{
+
+    position:fixed;
+
+    bottom:-100px;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+}
+
+
+
+.balloon-container::before{
+
+    content:"🎈 🎈 🎈 🎈 🎈";
+
+    position:absolute;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:60px;
+
+    animation:balloonUp 15s linear infinite;
+
+}
+
+
+
+@keyframes balloonUp{
+
+    from{
+
+        transform:translateY(100vh);
+
+    }
+
+
+    to{
+
+        transform:translateY(-120vh);
+
+    }
+
+}
+
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+
+.confetti{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+}
+
+
+
+.confetti::before{
+
+    content:"🎊 ✨ 🎉 ✨ 🎊";
+
+    position:absolute;
+
+    width:100%;
+
+    text-align:center;
+
+    top:-50px;
+
+    font-size:45px;
+
+    animation:confettiFall 8s linear infinite;
+
+}
+
+
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:translateY(-100px);
+
+    }
+
+
+    to{
+
+        transform:translateY(100vh);
+
+    }
+
+}
+
+
+
+/* =========================================
+   FINAL SURPRISE
+========================================= */
+
+
+.finalBox{
+
+    text-align:center;
+
+    width:700px;
+
+    max-width:90%;
+
+    padding:50px;
+
+    border-radius:30px;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(20px);
+
+
+    box-shadow:
+
+    0 0 60px rgba(255,20,147,.5);
+
+}
+
+
+
+.finalTitle{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:75px;
+
+    color:#ffb6e6;
+
+
+    text-shadow:
+
+    0 0 30px hotpink;
+
+}
+
+
+
+.finalBox p{
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    line-height:35px;
+
+}
+
+
+
+/* =========================================
+   FIREWORKS EFFECT
+========================================= */
+
+
+.fireworks{
+
+    margin-top:40px;
+
+    width:20px;
+
+    height:20px;
+
+    background:#ff1493;
+
+    border-radius:50%;
+
+    animation:
+
+    firework 2s infinite;
+
+}
+
+
+
+@keyframes firework{
+
+
+    0%{
+
+        box-shadow:
+
+        0 0 0 0 hotpink;
+
+    }
+
+
+    100%{
+
+        box-shadow:
+
+        0 -150px 0 10px transparent,
+
+        150px 0 0 10px transparent,
+
+        -150px 0 0 10px transparent,
+
+        0 150px 0 10px transparent;
+
+    }
+
+}
+
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+
+@media(max-width:600px){
+
+
+.title{
+
+    font-size:55px;
+
+}
+
+
+.name{
+
+    font-size:35px;
+
+}
+
+
+.cakeTitle{
+
+    font-size:45px;
+
+}
+
+
+.gallery{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+.photo{
+
+    width:200px;
+
+    height:230px;
+
+}
+
+
+.timeBox{
+
+    width:80px;
+
+    height:80px;
+
+}
+
+
+}
