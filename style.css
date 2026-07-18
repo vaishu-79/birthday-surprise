@@ -19,7 +19,7 @@ body{
 
     overflow:hidden;
 
-    color:white;
+    color:#5B4B8A;
 
     background:linear-gradient(
         135deg,
@@ -1572,5 +1572,79 @@ button:hover{
         opacity:0;
 
     }
+
+}
+/* =========================================
+   FLYING BUTTERFLIES
+========================================= */
+
+.butterfly{
+
+    position:fixed;
+
+    font-size:35px;
+
+    z-index:999;
+
+    pointer-events:none;
+
+    animation:flyButterfly linear forwards;
+
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.7));
+
+}
+
+@keyframes flyButterfly{
+
+    0%{
+
+        transform:
+        translate(-100px,100vh)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+        translate(50vw,40vh)
+        rotate(20deg);
+
+    }
+
+    100%{
+
+        transform:
+        translate(110vw,-100px)
+        rotate(40deg);
+
+        opacity:0;
+
+    }
+
+}
+.title,
+.cakeTitle,
+.finalTitle,
+.messageBox h2,
+.letterBox h1{
+
+    font-family:'Great Vibes',cursive;
+
+    letter-spacing:2px;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.8),
+    0 0 25px #7ec8ff;
 
 }
