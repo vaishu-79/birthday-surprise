@@ -1054,3 +1054,36 @@ input{
     }
 
 }
+.knife{
+    position:absolute;
+    top:-30px;
+    right:-80px;
+    font-size:55px;
+    transition:2s;
+    z-index:50;
+}
+
+.knifeMove{
+    transform:translate(-170px,170px) rotate(90deg);
+}
+
+.cakeHalf{
+    position:absolute;
+    transition:1.5s;
+}
+
+.leftHalf{
+    left:0;
+}
+
+.rightHalf{
+    right:0;
+}
+
+.splitLeft{
+    transform:translateX(-70px) rotate(-8deg);
+}
+
+.splitRight{
+    transform:translateX(70px) rotate(8deg);
+}
