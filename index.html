@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,194 +10,305 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
 
+
 <!-- Background Effects -->
+
 <div id="stars"></div>
+
 <div id="heartsContainer"></div>
+
 <div id="butterfliesContainer"></div>
+
 <div id="confettiContainer"></div>
 
-<!-- ========================= -->
-<!-- Warning Page -->
-<!-- ========================= -->
+
+
+<!-- =========================
+        WARNING PAGE
+========================= -->
 
 <section id="warningPage" class="page active">
 
-<h1 class="title">⚠️ Warning</h1>
+<h1>⚠️ Warning</h1>
 
-<p class="warningText">
-Only one special person should enter this surprise...
+<p>
+Only a special person can enter this surprise ❤️
 </p>
 
-<button id="warningBtn">
+<button id="continueBtn">
 Continue ❤️
 </button>
 
 </section>
 
-<!-- ========================= -->
-<!-- Login Page -->
-<!-- ========================= -->
+
+
+
+<!-- =========================
+        LOGIN PAGE
+========================= -->
 
 <section id="loginPage" class="page">
 
-<h1 class="title">
-🔐 Login
-</h1>
+<h1>🔐 Login</h1>
 
-<input
+<p>
+Enter the secret password
+</p>
+
+
+<input 
 type="password"
 id="password"
-placeholder="Enter Secret Password">
+placeholder="Password">
+
 
 <button id="loginBtn">
-Unlock ❤️
+Unlock 🔓
 </button>
 
-<p id="loginError"></p>
+
+<p id="errorMsg"></p>
+
 
 </section>
 
-<!-- ========================= -->
-<!-- Birthday Page -->
-<!-- ========================= -->
+
+
+
+
+<!-- =========================
+        BIRTHDAY PAGE
+========================= -->
 
 <section id="birthdayPage" class="page">
 
+
 <h1 class="birthdayTitle">
+
 🎉 Happy Birthday
+
 </h1>
 
+
 <h2 class="name">
+
 SARO ❤️
+
 </h2>
 
-<button id="startCountdown">
-Start Celebration
+
+<button id="celebrateBtn">
+
+Start Celebration 🎵
+
 </button>
+
 
 </section>
 
-<!-- ========================= -->
-<!-- Countdown -->
-<!-- ========================= -->
+
+
+
+
+<!-- =========================
+        COUNTDOWN PAGE
+========================= -->
 
 <section id="countdownPage" class="page">
 
-<div id="countdownNumber">
+
+<h1 id="countdown">
+
 3
-</div>
+
+</h1>
+
 
 </section>
 
-<!-- ========================= -->
-<!-- Cake Page -->
-<!-- ========================= -->
+
+
+
+
+
+
+<!-- =========================
+        CAKE PAGE
+========================= -->
+
 <section id="cakePage" class="page">
 
+
 <h1 class="cakeTitle">
+
 Make a Wish ❤️
+
 </h1>
+
+
+
+<div class="cakeArea">
+
+
+<!-- Candle -->
+
+<div class="candle">
+
+<div id="flame"></div>
+
+</div>
+
+
+
+<!-- Knife -->
+
+<div id="knife">
+
+🔪
+
+</div>
+
+
+
+
+<!-- Cake -->
 
 <div class="cake">
 
-    <div class="candle">
-        <div id="flame" class="flame"></div>
-    </div>
 
-    <!-- Knife -->
-    <div id="knife" class="knife">🔪</div>
+<div class="cakeLayer top"></div>
 
-    <!-- Left Cake -->
-    <div id="cakeLeft" class="cakeHalf leftHalf">
-        <div class="cakeTop"></div>
-        <div class="cakeMiddle"></div>
-        <div class="cakeBottom"></div>
-    </div>
+<div class="cakeLayer middle"></div>
 
-    <!-- Right Cake -->
-    <div id="cakeRight" class="cakeHalf rightHalf">
-        <div class="cakeTop"></div>
-        <div class="cakeMiddle"></div>
-        <div class="cakeBottom"></div>
-    </div>
+<div class="cakeLayer bottom"></div>
+
 
 </div>
+
+
+
+</div>
+
+
 
 <div id="smoke"></div>
 
-<button id="blowBtn">💨 Blow Candle</button>
 
-<button id="cutCakeBtn" disabled>🔪 Cut Cake</button>
+
+<button id="blowBtn">
+
+💨 Blow Candle
+
+</button>
+
+
+
+<button id="cutBtn" disabled>
+
+🔪 Cut Cake
+
+</button>
+
+
 
 </section>
 
 
-<!-- ========================= -->
-<!-- Gallery -->
-<!-- ========================= -->
+
+
+
+
+
+<!-- =========================
+        GALLERY PAGE
+========================= -->
+
 
 <section id="galleryPage" class="page">
 
-<h1 class="title">
 
-Our Memories ❤️
+<h1>
+
+📸 Our Memories ❤️
 
 </h1>
 
+
+
 <div class="gallery">
 
-<img id="galleryImage"
-src="images/photo1.jpg">
+
+<img id="galleryImage" src="saro.jpg">
+
 
 </div>
 
-<div class="galleryButtons">
 
-<button id="prev">
 
-⬅
+<div>
+
+<button id="prevBtn">
+
+⬅️
+
+</button>
+
+
+<button id="nextBtn">
+
+➡️
 
 </button>
 
-<button id="next">
-
-➡
-
-</button>
 
 </div>
 
-<audio
-id="birthdaySong"
-loop>
 
-<source
-src="music/song.mp3"
-type="audio/mpeg">
+
+
+<audio id="birthdaySong">
+
+<source src="birthday.mp3" type="audio/mp3">
 
 </audio>
 
+
+
 <button id="letterBtn">
 
-Open Letter 💌
+Open Love Letter 💌
 
 </button>
 
+
+
 </section>
 
-<!-- ========================= -->
-<!-- Love Letter -->
-<!-- ========================= -->
+
+
+
+
+
+
+
+<!-- =========================
+        LOVE LETTER PAGE
+========================= -->
+
 
 <section id="letterPage" class="page">
 
+
 <div class="letterBox">
+
 
 <h1>
 
@@ -204,25 +316,41 @@ For My Saro ❤️
 
 </h1>
 
-<p id="typingText">
+
+<p id="letterText">
 
 </p>
 
-<button id="surpriseBtn">
+
+
+<button id="finalBtn">
 
 Final Surprise 🎁
 
 </button>
 
+
+
 </div>
+
 
 </section>
 
-<!-- ========================= -->
-<!-- Final Surprise -->
-<!-- ========================= -->
+
+
+
+
+
+
+
+
+<!-- =========================
+        FINAL PAGE
+========================= -->
+
 
 <section id="finalPage" class="page">
+
 
 <h1 class="finalTitle">
 
@@ -230,33 +358,45 @@ Final Surprise 🎁
 
 </h1>
 
+
 <h2>
 
 SARO
 
 </h2>
 
-<p>
 
-Forever & Ever...
-
-</p>
-
-<div class="giftBox">
+<div class="gift">
 
 🎁
 
 </div>
 
-<div class="loveMessage">
+
+<p>
+
+Forever & Ever ❤️
+
+</p>
+
+
+<h3>
 
 Made with ❤️ by Vaishnavi
 
-</div>
+</h3>
+
+
 
 </section>
 
+
+
+
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
