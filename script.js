@@ -119,7 +119,7 @@ document.getElementById("replayBtn")
 
 
 let birthdayDate =
-new Date("September 07, 2026 00:00:00")
+new Date("July 23, 2026 00:00:00")
 .getTime();
 
 
