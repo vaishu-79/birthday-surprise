@@ -38,7 +38,7 @@ const song = document.getElementById("birthdaySong");
 // =====================================
 
 
-const secretPassword = "SARO";
+const secretPassword = "SAROVAISHU";
 
 
 
