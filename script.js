@@ -576,3 +576,177 @@ fireworks();
 
 
 });
+// =====================================
+// GALLERY SECTION
+// =====================================
+
+
+const galleryImage = document.getElementById("galleryImage");
+
+const prevBtn = document.getElementById("prevBtn");
+
+const nextBtn = document.getElementById("nextBtn");
+
+
+
+// Photos list
+
+const photos = [
+
+"saro.jpg",
+
+"saro1.jpg",
+
+"saro2.jpg"
+
+];
+
+
+
+let currentPhoto = 0;
+
+
+
+
+
+// Show Photo Function
+
+function showPhoto(){
+
+
+galleryImage.style.opacity = 0;
+
+
+
+setTimeout(()=>{
+
+
+galleryImage.src = photos[currentPhoto];
+
+
+galleryImage.style.opacity = 1;
+
+
+
+},500);
+
+
+
+}
+
+
+
+
+
+
+// Next Button
+
+
+nextBtn.onclick=function(){
+
+
+currentPhoto++;
+
+
+
+if(currentPhoto >= photos.length){
+
+
+currentPhoto = 0;
+
+
+}
+
+
+
+showPhoto();
+
+
+
+}
+
+
+
+
+
+
+
+// Previous Button
+
+
+prevBtn.onclick=function(){
+
+
+
+currentPhoto--;
+
+
+
+if(currentPhoto < 0){
+
+
+currentPhoto = photos.length-1;
+
+
+}
+
+
+
+showPhoto();
+
+
+
+}
+
+
+
+
+
+
+// Automatic Slide Show
+
+
+setInterval(()=>{
+
+
+currentPhoto++;
+
+
+
+if(currentPhoto >= photos.length){
+
+
+currentPhoto=0;
+
+
+}
+
+
+
+showPhoto();
+
+
+
+},4000);
+
+
+
+
+
+
+// =====================================
+// GALLERY OPEN BUTTON
+// =====================================
+
+
+const letterBtn = document.getElementById("letterBtn");
+
+
+letterBtn.onclick=function(){
+
+
+changePage(letterPage);
+
+
+
+};
