@@ -184,3 +184,59 @@ loginBtn.click();
 }
 
 });
+// ==========================================
+// CAKE CUT
+// ==========================================
+
+const knife = document.getElementById("knife");
+const cakeLeft = document.getElementById("cakeLeft");
+const cakeRight = document.getElementById("cakeRight");
+const cutCakeBtn = document.getElementById("cutCakeBtn");
+
+// Blow candle complete aanadhum Cut button enable
+blowBtn.onclick = () => {
+
+    flame.style.display = "none";
+
+    smoke.classList.add("smoke");
+    smoke.style.opacity = "1";
+
+    blowBtn.disabled = true;
+    blowBtn.innerHTML = "🕯️ Candle Blown";
+
+    cutCakeBtn.disabled = false;
+
+    setTimeout(() => {
+
+        smoke.style.opacity = "0";
+        smoke.classList.remove("smoke");
+
+    },2000);
+
+};
+
+
+// Cake Cut
+cutCakeBtn.onclick = () => {
+
+    // Knife animation
+    knife.classList.add("knifeMove");
+
+    setTimeout(() => {
+
+        cakeLeft.classList.add("splitLeft");
+
+        cakeRight.classList.add("splitRight");
+
+        // Confetti
+        createConfetti();
+
+        // Hearts
+        startHearts();
+
+        // Butterflies
+        startButterflies();
+
+    },1700);
+
+};
