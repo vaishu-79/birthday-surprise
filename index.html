@@ -1,425 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Happy Birthday SARO ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>Happy Birthday SARO ❤️</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!--==========================
-      BACKGROUND EFFECTS
-===========================-->
+<!-- Background Effects -->
+<div id="stars"></div>
+<div id="heartsContainer"></div>
+<div id="butterfliesContainer"></div>
+<div id="confettiContainer"></div>
 
-<div class="stars"></div>
+<!-- ========================= -->
+<!-- Warning Page -->
+<!-- ========================= -->
 
-<div class="glow glow1"></div>
+<section id="warningPage" class="page active">
 
-<div class="glow glow2"></div>
+<h1 class="title">⚠️ Warning</h1>
 
-<div class="hearts"></div>
+<p class="warningText">
+Only one special person should enter this surprise...
+</p>
 
-<div id="loader">
+<button id="warningBtn">
+Continue ❤️
+</button>
 
-    <div class="loader-heart">❤️</div>
+</section>
 
-    <h1>Preparing Your Surprise...</h1>
+<!-- ========================= -->
+<!-- Login Page -->
+<!-- ========================= -->
+
+<section id="loginPage" class="page">
+
+<h1 class="title">
+🔐 Login
+</h1>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Secret Password">
+
+<button id="loginBtn">
+Unlock ❤️
+</button>
+
+<p id="loginError"></p>
+
+</section>
+
+<!-- ========================= -->
+<!-- Birthday Page -->
+<!-- ========================= -->
+
+<section id="birthdayPage" class="page">
+
+<h1 class="birthdayTitle">
+🎉 Happy Birthday
+</h1>
+
+<h2 class="name">
+SARO ❤️
+</h2>
+
+<button id="startCountdown">
+Start Celebration
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- Countdown -->
+<!-- ========================= -->
+
+<section id="countdownPage" class="page">
+
+<div id="countdownNumber">
+3
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Cake Page -->
+<!-- ========================= -->
+
+<section id="cakePage" class="page">
+
+<h1 class="cakeTitle">
+
+Make a Wish ❤️
+
+</h1>
+
+<!-- Cake -->
+
+<div class="cake">
+
+<div class="candle">
+
+<div id="flame" class="flame"></div>
 
 </div>
 
-<!--==========================
-      PAGE 1
-===========================-->
+<div class="cakeTop"></div>
 
-<section class="page active" id="page1">
+<div class="cakeMiddle"></div>
 
-    <div class="glass fadeIn">
+<div class="cakeBottom"></div>
 
-        <h1 class="title">
-            Happy Birthday
-        </h1>
+</div>
 
-        <h2 class="name">
-            SARO ❤️
-        </h2>
+<div id="smoke"></div>
 
-        <p class="subtitle">
-            I made something special only for you...
-        </p>
+<button id="blowBtn">
 
-        <button id="startBtn">
-            Open Surprise 🎁
-        </button>
+💨 Blow Candle
 
-    </div>
+</button>
+
+<button id="cutCakeBtn">
+
+🔪 Cut Cake
+
+</button>
 
 </section>
 
-<!--==========================
-      PAGE 2
-===========================-->
+<!-- ========================= -->
+<!-- Cake Cut Result -->
+<!-- ========================= -->
 
-<section class="page" id="page2">
+<section id="cakeCutPage" class="page">
 
-    <div class="messageBox fadeIn">
+<h1 class="title">
 
-        <h2>
-            My Dear SARO ❤️
-        </h2>
+Happy Birthday My Love ❤️
 
-        <p class="typing">
+</h1>
 
-            Every second with you is a beautiful memory.
-            Today is your day, and I wanted to make it
-            unforgettable.
+<div class="cutCake">
 
-        </p>
+<div class="leftCake"></div>
 
-        <button class="continueBtn" id="next1">
+<div class="rightCake"></div>
 
-            Continue ❤️
+</div>
 
-        </button>
+<button id="nextGallery">
 
-    </div>
+Next ❤️
+
+</button>
 
 </section>
 
-<!--==========================
-      PAGE 3
-===========================-->
+<!-- ========================= -->
+<!-- Gallery -->
+<!-- ========================= -->
 
-<section class="page" id="page3">
+<section id="galleryPage" class="page">
 
-    <div class="glass fadeIn">
+<h1 class="title">
 
-        <h1>
+Our Memories ❤️
 
-            Before the Surprise...
+</h1>
 
-        </h1>
+<div class="gallery">
 
-        <p>
+<img id="galleryImage"
+src="images/photo1.jpg">
 
-            Close your eyes...
-            Take a deep breath...
-            And get ready for the most beautiful
-            birthday surprise made with love.
+</div>
 
-        </p>
+<div class="galleryButtons">
 
-        <button id="next2">
+<button id="prev">
 
-            I'm Ready 🎂
+⬅
 
-        </button>
+</button>
 
-    </div>
+<button id="next">
 
-</section>
-<!--==========================
-      PAGE 4 - COUNTDOWN
-===========================-->
+➡
 
-<section class="page" id="page4">
+</button>
 
-    <div class="glass fadeIn">
+</div>
 
-        <h1>
-            Birthday Moment Starts In ❤️
-        </h1>
+<audio
+id="birthdaySong"
+loop>
 
-        <div class="countdown">
-
-            <div class="timeBox">
-                <span id="days">00</span>
-                <small>Days</small>
-            </div>
-
-
-            <div class="timeBox">
-                <span id="hours">00</span>
-                <small>Hours</small>
-            </div>
-
-
-            <div class="timeBox">
-                <span id="minutes">00</span>
-                <small>Minutes</small>
-            </div>
-
-
-            <div class="timeBox">
-                <span id="seconds">00</span>
-                <small>Seconds</small>
-            </div>
-
-        </div>
-
-
-        <button id="cakeBtn">
-
-            See Your Cake 🎂
-
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!--==========================
-      PAGE 5 - CAKE SURPRISE
-===========================-->
-
-<section class="page" id="page5">
-
-
-    <div class="cake-area">
-
-
-        <h1 class="cakeTitle">
-
-            Happy Birthday SARO ❤️
-
-        </h1>
-
-
-
-        <div class="cake">
-
-
-            <div class="candle">
-
-                <div class="flame"></div>
-
-            </div>
-
-
-
-            <div class="layer topLayer">
-
-                <span></span>
-
-            </div>
-
-
-            <div class="layer middleLayer">
-
-            </div>
-
-
-            <div class="layer bottomLayer">
-
-            </div>
-
-
-
-        </div>
-
-
-
-        <button id="blowBtn">
-
-            Blow Candle 🕯️
-
-        </button>
-
-
-        <button id="cutBtn">
-
-            Cut The Cake 🔪
-
-        </button>
-
-
-    </div>
-
-
-</section>
-
-
-
-
-<!--==========================
-      PAGE 6 - MEMORIES
-===========================-->
-
-<section class="page" id="page6">
-
-
-    <div class="galleryBox">
-
-
-        <h1>
-
-            Our Beautiful Memories ❤️
-
-        </h1>
-
-
-
-        <div class="gallery">
-
-
-            <div class="photo">
-
-                <img src="saro.jpg">
-
-            </div>
-
-
-
-            <div class="photo">
-
-                <img src="saro1.jpg">
-
-            </div>
-
-
-
-            <div class="photo">
-
-                <img src="saro2.jpg">
-
-            </div>
-
-
-        </div>
-
-
-
-        <button id="letterBtn">
-
-            Read My Letter 💌
-
-        </button>
-
-
-    </div>
-
-
-</section>
-
-
-
-
-
-<!--==========================
-      PAGE 7 - LOVE LETTER
-===========================-->
-
-<section class="page" id="page7">
-
-
-    <div class="letterBox">
-
-
-        <h1>
-
-            For You SARO ❤️
-
-        </h1>
-
-
-        <p id="letterText">
-
-            You are one of the most special person in my life 😘.
-            Your smile, your care and your presence make every
-            moment beautiful 😘😉.I believe our life will change and we definitely got success 🥰🫂
-
-        </p>
-
-
-        <button id="finalBtn">
-
-            Final Surprise 🎆
-
-        </button>
-
-
-    </div>
-
-
-</section>
-
-
-
-
-
-<!--==========================
-      PAGE 8 - FINAL SURPRISE
-===========================-->
-
-<section class="page" id="page8">
-
-
-    <div class="finalBox">
-
-
-        <h1 class="finalTitle">
-
-            Happy Birthday SARO 🤎😘
-
-        </h1>
-
-
-
-        <p>
-
-            May your life always be filled with happiness,
-            success and endless smiles.
-
-        </p>
-
-
-
-        <div class="fireworks"></div>
-
-
-
-        <button id="replayBtn">
-
-            Replay Surprise 🔁
-
-        </button>
-
-
-    </div>
-
-
-</section>
-
-
-
-
-<!-- MUSIC -->
-
-<audio id="birthdayMusic" loop>
-
-    <source src="songs/birthday.mp3" type="audio/mp3">
+<source
+src="music/song.mp3"
+type="audio/mpeg">
 
 </audio>
 
+<button id="letterBtn">
 
+Open Letter 💌
 
-<!-- JAVASCRIPT -->
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- Love Letter -->
+<!-- ========================= -->
+
+<section id="letterPage" class="page">
+
+<div class="letterBox">
+
+<h1>
+
+For My Saro ❤️
+
+</h1>
+
+<p id="typingText">
+
+</p>
+
+<button id="surpriseBtn">
+
+Final Surprise 🎁
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Final Surprise -->
+<!-- ========================= -->
+
+<section id="finalPage" class="page">
+
+<h1 class="finalTitle">
+
+❤️ I LOVE YOU ❤️
+
+</h1>
+
+<h2>
+
+SARO
+
+</h2>
+
+<p>
+
+Forever & Ever...
+
+</p>
+
+<div class="giftBox">
+
+🎁
+
+</div>
+
+<div class="loveMessage">
+
+Made with ❤️ by Vaishnavi
+
+</div>
+
+</section>
 
 <script src="script.js"></script>
 
-
 </body>
-
 </html>
