@@ -240,20 +240,21 @@ document.querySelector(".cake");
 
 cutBtn.addEventListener("click",()=>{
 
-
     cake.classList.add("cut");
 
-
-    cutBtn.innerHTML =
-    "Cake Cut Successfully 🎂❤️";
-
+    cutBtn.innerHTML="Cake Cut Successfully 🎂❤️";
 
     createConfetti();
 
+    createBalloons();
+
+    setTimeout(()=>{
+
+        showPage(6);
+
+    },3000);
 
 });
-
-
 
 /* =========================================
    CONFETTI CREATION
