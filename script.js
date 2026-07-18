@@ -1,786 +1,186 @@
-/* =========================================
-   LOADER
-========================================= */
+// ==========================================
+// PASSWORD
+// ==========================================
+
+const PASSWORD = "ILOVESARO";
 
 
-window.addEventListener("load",()=>{
+// ==========================================
+// PAGES
+// ==========================================
 
-    const loader=document.getElementById("loader");
+const warningPage = document.getElementById("warningPage");
+const loginPage = document.getElementById("loginPage");
+const birthdayPage = document.getElementById("birthdayPage");
+const countdownPage = document.getElementById("countdownPage");
+const cakePage = document.getElementById("cakePage");
 
-    setTimeout(()=>{
 
-        loader.classList.add("hide");
+// ==========================================
+// BUTTONS
+// ==========================================
 
-    },2500);
+const warningBtn = document.getElementById("warningBtn");
+const loginBtn = document.getElementById("loginBtn");
+const startCountdown = document.getElementById("startCountdown");
+const blowBtn = document.getElementById("blowBtn");
+
+
+// ==========================================
+// ELEMENTS
+// ==========================================
+
+const passwordInput = document.getElementById("password");
+const loginError = document.getElementById("loginError");
+
+const countdownNumber = document.getElementById("countdownNumber");
+
+const flame = document.getElementById("flame");
+const smoke = document.getElementById("smoke");
+
+
+// ==========================================
+// PAGE CHANGE FUNCTION
+// ==========================================
+
+function showPage(next){
+
+document.querySelectorAll(".page").forEach(page=>{
+
+page.classList.remove("active");
 
 });
 
-
-
-/* =========================================
-   PAGE NAVIGATION
-========================================= */
-
-
-let currentPage=1;
-
-
-
-function showPage(pageNumber){
-
-    document.querySelectorAll(".page").forEach(page=>{
-
-        page.classList.remove("active");
-
-    });
-
-
-    document.getElementById("page"+pageNumber)
-    .classList.add("active");
-
-
-    currentPage=pageNumber;
+next.classList.add("active");
 
 }
 
 
+// ==========================================
+// WARNING PAGE
+// ==========================================
 
-/* =========================================
-   BUTTON CONTROLS
-========================================= */
+warningBtn.onclick=()=>{
 
+showPage(loginPage);
 
-document.getElementById("startBtn")
-.addEventListener("click",()=>{
-
-    showPage(2);
-
-});
+};
 
 
+// ==========================================
+// LOGIN
+// ==========================================
 
-document.getElementById("next1")
-.addEventListener("click",()=>{
+loginBtn.onclick=()=>{
 
-    showPage(3);
+if(passwordInput.value===PASSWORD){
 
-});
+showPage(birthdayPage);
 
+loginError.innerHTML="";
 
+}
 
-document.getElementById("next2")
-.addEventListener("click",()=>{
+else{
 
-    showPage(4);
+loginError.innerHTML="❌ Wrong Password ❤️";
 
-});
+passwordInput.value="";
 
+}
 
-
-document.getElementById("cakeBtn")
-.addEventListener("click",()=>{
-
-    showPage(5);
-
-});
+};
 
 
+// ==========================================
+// COUNTDOWN
+// ==========================================
 
-document.getElementById("letterBtn")
-.addEventListener("click",()=>{
+startCountdown.onclick=()=>{
 
-    showPage(7);
+showPage(countdownPage);
 
-});
+let count=3;
 
-
-
-document.getElementById("finalBtn")
-.addEventListener("click",()=>{
-
-    showPage(8);
-
-});
-
-
-
-document.getElementById("replayBtn")
-.addEventListener("click",()=>{
-
-    showPage(1);
-
-});
-
-
-
-/* =========================================
-   COUNTDOWN TIMER
-========================================= */
-
-
-let birthdayDate =
-new Date("July 23, 2026 00:00:00")
-.getTime();
-
-
+countdownNumber.innerHTML=count;
 
 let timer=setInterval(()=>{
 
+count--;
 
-    let now=new Date().getTime();
+if(count>0){
 
+countdownNumber.innerHTML=count;
 
-    let distance=birthdayDate-now;
+}
 
+else{
 
+clearInterval(timer);
 
-    let days=Math.floor(
-        distance/(1000*60*60*24)
-    );
+countdownNumber.innerHTML="🎉";
 
+setTimeout(()=>{
 
-    let hours=Math.floor(
-        (distance%(1000*60*60*24))
-        /(1000*60*60)
-    );
+showPage(cakePage);
 
+},1500);
 
-    let minutes=Math.floor(
-        (distance%(1000*60*60))
-        /(1000*60)
-    );
-
-
-    let seconds=Math.floor(
-        (distance%(1000*60))
-        /1000
-    );
-
-
-
-    document.getElementById("days")
-    .innerHTML=days;
-
-
-    document.getElementById("hours")
-    .innerHTML=hours;
-
-
-    document.getElementById("minutes")
-    .innerHTML=minutes;
-
-
-    document.getElementById("seconds")
-    .innerHTML=seconds;
-
-
-
-    if(distance<0){
-
-        clearInterval(timer);
-
-
-        document.getElementById("days")
-        .innerHTML="00";
-
-        document.getElementById("hours")
-        .innerHTML="00";
-
-        document.getElementById("minutes")
-        .innerHTML="00";
-
-        document.getElementById("seconds")
-        .innerHTML="00";
-
-    }
-
+}
 
 },1000);
 
+};
 
 
-/* =========================================
-   CANDLE BLOW
-========================================= */
+// ==========================================
+// BLOW CANDLE
+// ==========================================
+
+blowBtn.onclick=()=>{
+
+// Flame OFF
+
+flame.style.display="none";
 
 
-const blowBtn=
-document.getElementById("blowBtn");
+// Smoke
+
+smoke.classList.add("smoke");
+
+smoke.style.opacity="1";
 
 
-const flame=
-document.querySelector(".flame");
+// Disable Button
+
+blowBtn.disabled=true;
+
+blowBtn.innerHTML="🕯️ Candle Blown";
 
 
+// Smoke disappear
 
-blowBtn.addEventListener("click",()=>{
+setTimeout(()=>{
 
+smoke.style.opacity="0";
 
-    flame.classList.add("off");
+smoke.classList.remove("smoke");
 
+},2000);
 
-    blowBtn.innerHTML=
-    "Candle Blown ❤️";
-
-
-});
-/* =========================================
-   CAKE CUTTING ANIMATION
-========================================= */
+};
 
 
-const cutBtn =
-document.getElementById("cutBtn");
+// ==========================================
+// ENTER KEY LOGIN
+// ==========================================
 
+passwordInput.addEventListener("keypress",function(e){
 
-const cake =
-document.querySelector(".cake");
+if(e.key==="Enter"){
 
-
-
-cutBtn.addEventListener("click",()=>{
-
-    cake.classList.add("cut");
-
-    cutBtn.innerHTML="Cake Cut Successfully 🎂❤️";
-
-    createConfetti();
-
-    createBalloons();
-
-    setTimeout(()=>{
-
-        showPage(6);
-
-    },3000);
-
-});
-
-/* =========================================
-   CONFETTI CREATION
-========================================= */
-
-
-function createConfetti(){
-
-
-    for(let i=0;i<40;i++){
-
-
-        let piece =
-        document.createElement("div");
-
-
-        piece.className="confettiPiece";
-
-
-        piece.style.left =
-        Math.random()*100+"vw";
-
-
-        piece.style.animationDuration =
-        (Math.random()*3+2)+"s";
-
-
-        piece.innerHTML =
-        "✨";
-
-
-        document.body.appendChild(piece);
-
-
-
-        setTimeout(()=>{
-
-            piece.remove();
-
-        },5000);
-
-
-    }
+loginBtn.click();
 
 }
 
-
-
-/* =========================================
-   BALLOON EFFECT
-========================================= */
-
-
-function createBalloons(){
-
-
-    let balloonBox =
-    document.querySelector(".balloon-container");
-
-
-    for(let i=0;i<15;i++){
-
-
-        let balloon =
-        document.createElement("div");
-
-
-        balloon.className="balloon";
-
-
-        balloon.style.left =
-        Math.random()*100+"%";
-
-
-        balloon.style.animationDelay =
-        Math.random()*5+"s";
-
-
-        balloonBox.appendChild(balloon);
-
-
-
-    }
-
-
-}
-
-
-
-createBalloons();
-
-
-
-/* =========================================
-   MUSIC CONTROL
-========================================= */
-
-
-const music =
-document.getElementById("birthdayMusic");
-
-
-
-document.body.addEventListener(
-"click",
-()=>{
-
-
-    if(music.paused){
-
-
-        music.play()
-        .catch(()=>{});
-
-
-    }
-
-
-},
-{once:true}
-
-);
-
-
-
-/* =========================================
-   GALLERY IMAGE EFFECT
-========================================= */
-
-
-const photos =
-document.querySelectorAll(".photo");
-
-
-
-photos.forEach(photo=>{
-
-
-    photo.addEventListener("mouseenter",()=>{
-
-
-        photo.style.transform =
-        "scale(1.08) rotate(3deg)";
-
-
-    });
-
-
-
-    photo.addEventListener("mouseleave",()=>{
-
-
-        photo.style.transform =
-        "scale(1)";
-
-
-    });
-
-
-
 });
-
-
-
-/* =========================================
-   LOVE LETTER TYPING
-========================================= */
-
-
-const letter =
-document.getElementById("letterText");
-
-
-
-let text =
-letter.innerHTML;
-
-
-
-letter.innerHTML="";
-
-
-
-let index=0;
-
-
-
-function typeLetter(){
-
-
-    if(index < text.length){
-
-
-        letter.innerHTML +=
-        text.charAt(index);
-
-
-        index++;
-
-
-        setTimeout(typeLetter,50);
-
-
-    }
-
-
-}
-
-
-
-document
-.getElementById("letterBtn")
-.addEventListener("click",()=>{
-
-
-    showPage(7);
-
-
-    typeLetter();
-
-
-});
-/* =========================================
-   FINAL SURPRISE EFFECT
-========================================= */
-
-
-const finalBtn =
-document.getElementById("finalBtn");
-
-
-finalBtn.addEventListener("click",()=>{
-
-
-    showPage(8);
-
-
-    startFireworks();
-
-
-});
-
-
-
-/* =========================================
-   FIREWORKS CREATION
-========================================= */
-
-
-function startFireworks(){
-
-
-    for(let i=0;i<25;i++){
-
-
-        let fire =
-        document.createElement("div");
-
-
-        fire.className="fireworkParticle";
-
-
-        fire.style.left =
-        Math.random()*100+"vw";
-
-
-        fire.style.top =
-        Math.random()*80+"vh";
-
-
-        fire.style.animationDelay =
-        Math.random()*2+"s";
-
-
-        document.body.appendChild(fire);
-
-
-
-        setTimeout(()=>{
-
-
-            fire.remove();
-
-
-        },4000);
-
-
-    }
-
-
-}
-
-
-
-/* =========================================
-   CREATE SPARKLES
-========================================= */
-
-
-function createSparkles(){
-
-
-    for(let i=0;i<30;i++){
-
-
-        let sparkle =
-        document.createElement("span");
-
-
-        sparkle.className="sparkle";
-
-
-        sparkle.innerHTML="✨";
-
-
-        sparkle.style.left =
-        Math.random()*100+"vw";
-
-
-        sparkle.style.top =
-        Math.random()*100+"vh";
-
-
-        sparkle.style.animationDelay =
-        Math.random()*3+"s";
-
-
-        document.body.appendChild(sparkle);
-
-
-
-        setTimeout(()=>{
-
-
-            sparkle.remove();
-
-
-        },5000);
-
-
-    }
-
-}
-
-
-
-
-/* =========================================
-   FINAL MESSAGE POPUP
-========================================= */
-
-
-function finalMessage(){
-
-
-    setTimeout(()=>{
-
-
-        alert(
-        "Happy Birthday SARO ❤️\n\n"+
-        "May your life always be filled with happiness, "+
-        "success and beautiful memories ✨"
-        );
-
-
-    },3000);
-
-
-}
-
-
-
-finalBtn.addEventListener("click",()=>{
-
-
-    createSparkles();
-
-
-    finalMessage();
-
-
-});
-
-
-
-
-
-/* =========================================
-   REPLAY FUNCTION
-========================================= */
-
-
-document
-.getElementById("replayBtn")
-.addEventListener("click",()=>{
-
-
-    location.reload();
-
-
-});
-
-
-
-
-
-/* =========================================
-   KEYBOARD EFFECT
-========================================= */
-
-
-document.addEventListener(
-"keydown",
-(event)=>{
-
-
-    if(event.key==="Enter"){
-
-
-        createSparkles();
-
-
-    }
-
-
-});
-
-
-
-
-
-/* =========================================
-   PREVENT IMAGE DRAG
-========================================= */
-
-
-document.querySelectorAll("img")
-.forEach(img=>{
-
-
-    img.addEventListener(
-    "dragstart",
-    (e)=>{
-
-
-        e.preventDefault();
-
-
-    });
-
-
-});
-function createBalloons(){
-
-    const colors = [
-        "#ff4d6d",
-        "#ffbe0b",
-        "#3a86ff",
-        "#06d6a0",
-        "#ff66c4",
-        "#8338ec",
-        "#00b4d8"
-    ];
-
-    for(let i=0;i<20;i++){
-
-        let balloon=document.createElement("div");
-
-        balloon.className="balloon";
-
-        balloon.style.left=Math.random()*100+"vw";
-
-        balloon.style.background=
-        colors[Math.floor(Math.random()*colors.length)];
-
-        balloon.style.animationDuration=
-        (8+Math.random()*6)+"s";
-
-        balloon.style.animationDelay=
-        Math.random()*2+"s";
-
-        document.body.appendChild(balloon);
-
-        setTimeout(()=>{
-            balloon.remove();
-        },15000);
-
-    }
-
-}
-/* =========================================
-   BUTTERFLIES
-========================================= */
-
-function createButterflies(){
-
-    const butterflies=["🦋","🦋","🦋"];
-
-    for(let i=0;i<12;i++){
-
-        let butterfly=document.createElement("div");
-
-        butterfly.className="butterfly";
-
-        butterfly.innerHTML=
-        butterflies[Math.floor(Math.random()*butterflies.length)];
-
-        butterfly.style.left="-50px";
-
-        butterfly.style.top=
-        Math.random()*100+"vh";
-
-        butterfly.style.animationDuration=
-        (8+Math.random()*6)+"s";
-
-        butterfly.style.animationDelay=
-        Math.random()*3+"s";
-
-        document.body.appendChild(butterfly);
-
-        setTimeout(()=>{
-
-            butterfly.remove();
-
-        },15000);
-
-    }
-
-}
