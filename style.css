@@ -11,16 +11,17 @@
 
 body{
 
-    height:100vh;
+height:100vh;
 
-    overflow:hidden;
+overflow:hidden;
 
-    font-family:'Poppins',sans-serif;
+font-family:'Poppins',sans-serif;
 
-    color:white;
+color:white;
 
-    background:
-    linear-gradient(135deg,#090018,#25002f,#050015);
+background:
+
+linear-gradient(135deg,#ff9a9e,#fad0c4,#ffd1ff);
 
 }
 
@@ -60,30 +61,7 @@ body{
 
 
 
-/* =========================
-        BACKGROUND STARS
-========================= */
 
-
-#stars{
-
-position:fixed;
-
-width:100%;
-
-height:100%;
-
-background:
-
-radial-gradient(white 1px,transparent 1px);
-
-background-size:70px 70px;
-
-animation:starsMove 30s linear infinite;
-
-z-index:-1;
-
-}
 
 
 @keyframes starsMove{
