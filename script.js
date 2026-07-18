@@ -834,20 +834,13 @@ setTimeout(typeLetter,50);
 
 letterBtn.onclick=function(){
 
-
 changePage(letterPage);
-
-
 
 letterText.innerHTML="";
 
-
 letterIndex=0;
 
-
 typeLetter();
-
-
 
 };
 
@@ -878,6 +871,30 @@ fireworks();
 
 
 };
+// =====================================
+// GALLERY TO LETTER AUTO FLOW
+// =====================================
+
+setTimeout(()=>{
+
+
+if(galleryPage.classList.contains("active")){
+
+
+changePage(letterPage);
+
+
+letterText.innerHTML="";
+
+letterIndex=0;
+
+typeLetter();
+
+
+}
+
+
+},15000);
 // =====================================
 // FINAL SURPRISE
 // =====================================
