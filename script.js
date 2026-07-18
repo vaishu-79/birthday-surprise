@@ -706,3 +706,41 @@ document.querySelectorAll("img")
 
 
 });
+function createBalloons(){
+
+    const colors = [
+        "#ff4d6d",
+        "#ffbe0b",
+        "#3a86ff",
+        "#06d6a0",
+        "#ff66c4",
+        "#8338ec",
+        "#00b4d8"
+    ];
+
+    for(let i=0;i<20;i++){
+
+        let balloon=document.createElement("div");
+
+        balloon.className="balloon";
+
+        balloon.style.left=Math.random()*100+"vw";
+
+        balloon.style.background=
+        colors[Math.floor(Math.random()*colors.length)];
+
+        balloon.style.animationDuration=
+        (8+Math.random()*6)+"s";
+
+        balloon.style.animationDelay=
+        Math.random()*2+"s";
+
+        document.body.appendChild(balloon);
+
+        setTimeout(()=>{
+            balloon.remove();
+        },15000);
+
+    }
+
+}
