@@ -546,52 +546,21 @@ opacity:0;
 
 .gallery img{
 
+width:380px;
 
-width:350px;
-
-height:420px;
+height:450px;
 
 object-fit:cover;
 
+border-radius:30px;
 
-border-radius:25px;
-
+border:5px solid white;
 
 box-shadow:
 
-0 0 30px pink;
-
-
-transition:.5s;
-
+0 0 40px #ff1493;
 
 }
-
-
-
-.gallery img:hover{
-
-
-transform:scale(1.05);
-
-
-}
-#galleryImage{
-
-transition:0.5s;
-
-opacity:1;
-
-}
-
-
-
-.gallery img{
-
-animation:imageGlow 3s infinite;
-
-}
-
 
 
 
