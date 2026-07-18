@@ -12,6 +12,7 @@
     font-family:'Poppins',sans-serif;
 }
 
+
 body{
 
     margin:0;
@@ -22,21 +23,20 @@ body{
 
     background:linear-gradient(
         135deg,
-        #C8B6FF,
-        #A0C4FF,
-        #BDE0FE,
-        #D0BCFF,
-        #B8E1FF
+        #87CEEB,
+        #B0E0E6,
+        #ADD8E6,
+        #E0F7FF,
+        #87CEFA
     );
 
     background-size:500% 500%;
 
-    animation:bgAnimation 15s ease infinite;
+    animation:bgMove 15s ease infinite;
 
 }
 
-
-@keyframes bgAnimation{
+@keyframes bgMove{
 
     0%{
 
@@ -57,8 +57,6 @@ body{
     }
 
 }
-
-
 /* =========================================
    PAGE SYSTEM
 ========================================= */
