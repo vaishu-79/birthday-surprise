@@ -135,7 +135,13 @@ password.value="";
 // CELEBRATION START
 // =====================================
 
+celebrateBtn.onclick = function(){
 
+    changePage(countdownPage);
+
+    startCountdown();
+
+}
 
 
 
