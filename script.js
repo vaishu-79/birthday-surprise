@@ -136,27 +136,20 @@ password.value="";
 // =====================================
 
 
-celebrateBtn.onclick=function(){
+celebrateBtn.onclick = function(){
 
+    song.volume = 0.6;
+    song.loop = true;
 
+    song.play().catch(err => {
+        console.log("Audio Error:", err);
+    });
 
-// Play Song
+    changePage(countdownPage);
 
-song.play();
+    startCountdown();
 
-
-
-// Go Countdown
-
-changePage(countdownPage);
-
-
-
-startCountdown();
-
-
-
-};
+}
 
 
 
