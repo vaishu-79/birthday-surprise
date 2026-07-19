@@ -556,15 +556,16 @@ fireworks();
 },2000);
 setTimeout(()=>{
 
-changePage(galleryPage);
+    changePage(galleryPage);
+
     song.volume = 0.6;
-song.loop = true;
-song.play();
+    song.loop = true;
+
+    song.play().catch(err => {
+        console.log("Audio Error:", err);
+    });
 
 },4000);
-
-
-});
 // =====================================
 // GALLERY SECTION
 // =====================================
