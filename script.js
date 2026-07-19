@@ -136,19 +136,6 @@ password.value="";
 // =====================================
 
 
-celebrateBtn.onclick = function(){
-
-    
-    
-
-    changePage(countdownPage);
-
-    startCountdown();
-
-}
-
-
-
 
 
 
