@@ -139,9 +139,7 @@ password.value="";
 celebrateBtn.onclick = function(){
 
     
-    song.play().catch(err => {
-        console.log("Audio Error:", err);
-    });
+    
 
     changePage(countdownPage);
 
