@@ -138,9 +138,7 @@ password.value="";
 
 celebrateBtn.onclick = function(){
 
-    song.volume = 0.6;
-    song.loop = true;
-
+    
     song.play().catch(err => {
         console.log("Audio Error:", err);
     });
@@ -568,6 +566,9 @@ fireworks();
 setTimeout(()=>{
 
 changePage(galleryPage);
+    song.volume = 0.6;
+song.loop = true;
+song.play();
 
 },4000);
 
