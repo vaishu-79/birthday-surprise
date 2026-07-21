@@ -430,6 +430,7 @@ finalBtn.onclick=function(){
 // =====================================
 // GIFT OPEN ANIMATION
 // =====================================
+const duduBox = document.getElementById("duduBox");
 
 
 gift.onclick=function(){
