@@ -178,6 +178,311 @@ cutBtn.onclick=function(){
 
 };
 // =====================================
+// AFTER CAKE CUT -> GALLERY
+// =====================================
+
+cutBtn.addEventListener("click", function(){
+
+
+    setTimeout(()=>{
+
+
+        createConfetti();
+
+        startHearts();
+
+        startButterflies();
+
+        fireworks();
+
+
+    },2000);
+
+
+
+    setTimeout(()=>{
+
+
+        changePage(galleryPage);
+
+
+        // 🎵 Song starts only in Gallery
+
+        song.volume = 0.6;
+
+        song.loop = true;
+
+
+        song.play().catch(error=>{
+
+            console.log("Song Error:",error);
+
+        });
+
+
+
+    },4000);
+
+
+
+});
+
+
+
+
+// =====================================
+// GALLERY
+// =====================================
+
+
+const galleryImage =
+document.getElementById("galleryImage");
+
+
+const prevBtn =
+document.getElementById("prevBtn");
+
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+
+
+const photos = [
+
+"saro.jpg",
+
+"saro1.jpg",
+
+"saro2.jpg"
+
+];
+
+
+
+let currentPhoto = 0;
+
+
+
+
+function showPhoto(){
+
+
+    galleryImage.style.opacity = 0;
+
+
+
+    setTimeout(()=>{
+
+
+        galleryImage.src =
+        photos[currentPhoto];
+
+
+        galleryImage.style.opacity = 1;
+
+
+
+    },500);
+
+
+
+}
+
+
+
+
+// NEXT PHOTO
+
+
+nextBtn.onclick=function(){
+
+
+    currentPhoto++;
+
+
+
+    if(currentPhoto >= photos.length){
+
+
+        currentPhoto = 0;
+
+
+    }
+
+
+
+    showPhoto();
+
+
+};
+
+
+
+
+
+
+// PREVIOUS PHOTO
+
+
+prevBtn.onclick=function(){
+
+
+    currentPhoto--;
+
+
+
+    if(currentPhoto < 0){
+
+
+        currentPhoto =
+        photos.length-1;
+
+
+    }
+
+
+
+    showPhoto();
+
+
+};
+
+
+
+
+
+
+// AUTO SLIDE
+
+
+setInterval(()=>{
+
+
+    currentPhoto++;
+
+
+
+    if(currentPhoto >= photos.length){
+
+
+        currentPhoto=0;
+
+
+    }
+
+
+
+    showPhoto();
+
+
+
+},4000);
+
+
+
+
+
+
+
+// =====================================
+// LOVE LETTER
+// =====================================
+
+
+const letterBtn =
+document.getElementById("letterBtn");
+
+
+const letterText =
+document.getElementById("letterText");
+
+
+const finalBtn =
+document.getElementById("finalBtn");
+
+
+
+
+const message = `
+
+Dear Saro ❤️
+
+
+Happy Birthday My Love 🎂
+
+
+You are the most beautiful
+part of my life.
+
+
+Thank you for bringing
+so much happiness
+and smiles into my world.
+
+
+Always stay happy ❤️
+
+
+With lots of love,
+
+Vaishnavi ❤️
+
+`;
+
+
+
+let letterIndex = 0;
+
+
+
+
+function typeLetter(){
+
+
+    if(letterIndex < message.length){
+
+
+        letterText.innerHTML +=
+        message.charAt(letterIndex);
+
+
+        letterIndex++;
+
+
+        setTimeout(typeLetter,50);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+letterBtn.onclick=function(){
+
+
+    changePage(letterPage);
+
+
+
+    letterText.innerHTML="";
+
+
+    letterIndex=0;
+
+
+    typeLetter();
+
+
+
+};
+// =====================================
 // GALLERY SECTION
 // =====================================
 
