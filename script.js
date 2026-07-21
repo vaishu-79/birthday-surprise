@@ -12,7 +12,9 @@ const birthdayPage = document.getElementById("birthdayPage");
 const countdownPage = document.getElementById("countdownPage");
 
 const cakePage = document.getElementById("cakePage");
-
+const galleryPage = document.getElementById("galleryPage");
+const letterPage = document.getElementById("letterPage");
+const finalPage = document.getElementById("finalPage");
 
 const continueBtn = document.getElementById("continueBtn");
 
@@ -566,6 +568,7 @@ setTimeout(()=>{
     });
 
 },4000);
+}
 // =====================================
 // GALLERY SECTION
 // =====================================
