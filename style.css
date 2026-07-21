@@ -1534,5 +1534,5 @@ opacity:.3;
 #duduBox{
 
 display:none;
-
+animation:duduAppear 2s ease;
 }
