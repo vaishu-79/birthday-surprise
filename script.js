@@ -178,6 +178,12 @@ cutBtn.onclick=function(){
 
 
     setTimeout(()=>{
+        song.volume=0.6;
+        song.loop=true;
+
+        song.play();
+        changePage(galleryPage);
+
 
         createConfetti();
 
@@ -186,15 +192,6 @@ cutBtn.onclick=function(){
         startButterflies();
 
         fireworks();
-
-        changePage(galleryPage);
-
-
-        song.volume=0.6;
-        song.loop=true;
-
-        song.play();
-
 
     },4000);
 
