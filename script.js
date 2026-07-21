@@ -25,7 +25,7 @@ const flame = document.getElementById("flame");
 const smoke = document.getElementById("smoke");
 const knife = document.getElementById("knife");
 const cake = document.querySelector(".cake");
-const birthdayFlash = document.getElementById("birthdayFlash");
+
 const song = document.getElementById("birthdaySong");
 
 // =====================================
@@ -109,69 +109,37 @@ celebrateBtn.onclick=function(){
 // =====================================
 // COUNTDOWN
 // =====================================
-
 function startCountdown(){
 
-    const clock = document.getElementById("midnightClock");
+    let number = 3;
 
-    const times = [
+    countdown.innerHTML = number;
 
-        "11:59:57 PM",
+    let timer = setInterval(()=>{
 
-        "11:59:58 PM",
+        number--;
 
-        "11:59:59 PM",
+        if(number > 0){
 
-        "🎉 12:00:00 AM 🎉"
+            countdown.innerHTML = number;
 
-    ];
-
-    let i = 0;
-
-    clock.innerHTML = times[i];
-
-    const timer = setInterval(()=>{
-
-        i++;
-
-        if(i < times.length){
-
-            clock.innerHTML = times[i];
-
-        }
-
-        else{
+        }else{
 
             clearInterval(timer);
-clock.innerHTML = "🎉 12:00:00 AM 🎉";
 
-setTimeout(()=>{
+            countdown.innerHTML = "🎉";
 
-    birthdayFlash.style.display = "flex";
+            setTimeout(()=>{
 
-    createConfetti();
-    fireworks();
+                changePage(cakePage);
 
-    song.volume = 0.6;
-    song.loop = true;
-    song.play();
+            },1500);
 
-},1000);
-
-setTimeout(()=>{
-
-    birthdayFlash.style.display = "none";
-
-    changePage(cakePage);
-
-},3500);
-            
         }
 
     },1000);
 
 }
-
 // =====================================
 // BLOW CANDLE
 // =====================================
@@ -690,11 +658,4 @@ fire.remove();
 
 
 }
-openMessage.onclick=function(){
-
-    birthdayPopup.style.display="none";
-
-    changePage(cakePage);
-
-};
 
