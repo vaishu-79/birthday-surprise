@@ -321,7 +321,6 @@ setInterval(()=>{
 
 const letterText = document.getElementById("letterText");
 
-const finalBtn = document.getElementById("finalBtn");
 
 
 
