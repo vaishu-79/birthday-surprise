@@ -1397,3 +1397,142 @@ font-size:100px;
 
 
 }
+/* =========================
+      DUDU BUBU HUG
+========================= */
+
+
+.duduBox{
+
+margin-top:20px;
+
+text-align:center;
+
+animation:duduAppear 2s ease;
+
+}
+
+
+
+.duduBox img{
+
+width:260px;
+
+border-radius:30px;
+
+filter:
+
+drop-shadow(0 0 20px pink);
+
+animation:duduFloat 2s infinite alternate;
+
+}
+
+
+
+.duduBox h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:45px;
+
+color:#ffe6f7;
+
+text-shadow:
+
+0 0 20px hotpink;
+
+}
+
+
+
+.flower{
+
+font-size:40px;
+
+animation:flowersMove 3s infinite;
+
+}
+
+
+
+@keyframes duduAppear{
+
+
+from{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+@keyframes duduFloat{
+
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(-15px);
+
+}
+
+
+}
+
+
+
+@keyframes flowersMove{
+
+
+0%{
+
+transform:translateY(-20px);
+
+opacity:.3;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(20px);
+
+opacity:.3;
+
+}
+
+
+}
+#duduBox{
+
+display:none;
+
+}
