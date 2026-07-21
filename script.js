@@ -166,7 +166,19 @@ blowBtn.onclick=function(){
 // CUT CAKE
 // =====================================
 
+cutBtn.onclick=function(){
 
+    knife.classList.add("knifeMove");
+
+
+    setTimeout(()=>{
+
+        cake.classList.add("cakeCut");
+
+    },1200);
+
+
+};
 
 
 
@@ -415,7 +427,7 @@ letterBtn.onclick=function(){
 
 const gift = document.querySelector(".gift");
 
-const finalPage = document.getElementById("finalPage");
+
 
 
 
