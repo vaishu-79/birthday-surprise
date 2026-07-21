@@ -25,7 +25,7 @@ const flame = document.getElementById("flame");
 const smoke = document.getElementById("smoke");
 const knife = document.getElementById("knife");
 const cake = document.querySelector(".cake");
-
+const birthdayFlash = document.getElementById("birthdayFlash");
 const song = document.getElementById("birthdaySong");
 
 // =====================================
@@ -112,32 +112,60 @@ celebrateBtn.onclick=function(){
 
 function startCountdown(){
 
-    let number=3;
+    const clock = document.getElementById("midnightClock");
 
-    countdown.innerHTML=number;
+    const times = [
 
-    let timer=setInterval(()=>{
+        "11:59:57 PM",
 
-        number--;
+        "11:59:58 PM",
 
-        if(number>0){
+        "11:59:59 PM",
 
-            countdown.innerHTML=number;
+        "🎉 12:00:00 AM 🎉"
+
+    ];
+
+    let i = 0;
+
+    clock.innerHTML = times[i];
+
+    const timer = setInterval(()=>{
+
+        i++;
+
+        if(i < times.length){
+
+            clock.innerHTML = times[i];
 
         }
 
         else{
 
             clearInterval(timer);
+clock.innerHTML = "🎉 12:00:00 AM 🎉";
 
-            countdown.innerHTML="🎉";
+setTimeout(()=>{
 
-            setTimeout(()=>{
+    birthdayFlash.style.display = "flex";
 
-                changePage(cakePage);
+    createConfetti();
+    fireworks();
 
-            },1500);
+    song.volume = 0.6;
+    song.loop = true;
+    song.play();
 
+},1000);
+
+setTimeout(()=>{
+
+    birthdayFlash.style.display = "none";
+
+    changePage(cakePage);
+
+},3500);
+            
         }
 
     },1000);
@@ -662,23 +690,11 @@ fire.remove();
 
 
 }
-function updateClock(){
+openMessage.onclick=function(){
 
-    const now = new Date();
+    birthdayPopup.style.display="none";
 
-    let h = now.getHours();
-    let m = now.getMinutes();
-    let s = now.getSeconds();
+    changePage(cakePage);
 
-    h = String(h).padStart(2,"0");
-    m = String(m).padStart(2,"0");
-    s = String(s).padStart(2,"0");
+};
 
-    document.getElementById("clock").innerHTML =
-    "🕒 " + h + ":" + m + ":" + s;
-
-}
-
-updateClock();
-
-setInterval(updateClock,1000);
