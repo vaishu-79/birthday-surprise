@@ -170,13 +170,33 @@ cutBtn.onclick=function(){
 
     knife.classList.add("knifeMove");
 
-
     setTimeout(()=>{
 
         cake.classList.add("cakeCut");
 
     },1200);
 
+
+    setTimeout(()=>{
+
+        createConfetti();
+
+        startHearts();
+
+        startButterflies();
+
+        fireworks();
+
+        changePage(galleryPage);
+
+
+        song.volume=0.6;
+        song.loop=true;
+
+        song.play();
+
+
+    },4000);
 
 };
 
@@ -195,7 +215,7 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 const letterBtn = document.getElementById("letterBtn");
-
+const finalBtn = document.getElementById("finalBtn");
 
 
 const photos = [
@@ -290,56 +310,6 @@ setInterval(()=>{
 
 
 
-
-// =====================================
-// AFTER CAKE CUT -> GALLERY
-// =====================================
-
-
-cutBtn.addEventListener("click",()=>{
-
-
-    setTimeout(()=>{
-
-
-        createConfetti();
-
-        startHearts();
-
-        startButterflies();
-
-        fireworks();
-
-
-    },2000);
-
-
-
-    setTimeout(()=>{
-
-
-        changePage(galleryPage);
-
-
-        // Song starts only in gallery ❤️
-
-        song.volume = 0.6;
-
-        song.loop = true;
-
-
-        song.play().catch(err=>{
-
-            console.log(err);
-
-        });
-
-
-    },4000);
-
-
-
-});
 
 
 
