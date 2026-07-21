@@ -755,23 +755,7 @@ transform:scale(.95);
 }
 
 
-@keyframes cakeOpen{
 
-
-0%{
-
-transform:scale(1);
-
-}
-
-
-100%{
-
-transform:scale(.95);
-
-}
-
-}
 
 
 
@@ -1014,10 +998,22 @@ opacity:0;
 
 .letterBox{
 
+width:700px;
+
+max-width:90%;
+
+padding:40px;
+
+background:
+rgba(255,255,255,.12);
+
+border-radius:25px;
+
+backdrop-filter:blur(15px);
+
 animation:letterOpen 1s ease;
 
 }
-
 
 @keyframes letterOpen{
 
