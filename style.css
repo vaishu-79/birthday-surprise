@@ -1542,26 +1542,37 @@ opacity:.3;
     animation:duduAppear 2s ease;
 
 }
-#clock{
-    position:fixed;
-    top:20px;
-    right:20px;
+#midnightClock{
 
-    padding:10px 20px;
+    font-size:90px;
 
-    border-radius:30px;
-
-    background:rgba(255,255,255,.15);
-
-    backdrop-filter:blur(10px);
+    font-family:'Poppins',sans-serif;
 
     color:white;
 
-    font-size:20px;
+    letter-spacing:5px;
 
-    font-weight:bold;
+    text-shadow:
+    0 0 20px #fff,
+    0 0 40px hotpink,
+    0 0 70px deeppink;
 
-    box-shadow:0 0 15px pink;
+    animation:clockGlow 1s infinite alternate;
 
-    z-index:999;
+}
+
+@keyframes clockGlow{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.05);
+
+    }
+
 }
