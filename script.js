@@ -443,6 +443,7 @@ gift.onclick=function(){
 
 
         gift.innerHTML="💖";
+duduBox.style.display="block";
 
 
     },1000);
