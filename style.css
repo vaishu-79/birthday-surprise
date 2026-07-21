@@ -1542,3 +1542,26 @@ opacity:.3;
     animation:duduAppear 2s ease;
 
 }
+#clock{
+    position:fixed;
+    top:20px;
+    right:20px;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    box-shadow:0 0 15px pink;
+
+    z-index:999;
+}
