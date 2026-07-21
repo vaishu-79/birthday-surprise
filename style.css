@@ -1531,8 +1531,14 @@ opacity:.3;
 
 
 }
-#duduBox{
+.duduBox{
 
-display:none;
-animation:duduAppear 2s ease;
+    margin-top:20px;
+
+    text-align:center;
+
+    display:block;
+
+    animation:duduAppear 2s ease;
+
 }
