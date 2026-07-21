@@ -1542,40 +1542,7 @@ opacity:.3;
     animation:duduAppear 2s ease;
 
 }
-#midnightClock{
 
-    font-size:90px;
-
-    font-family:'Poppins',sans-serif;
-
-    color:white;
-
-    letter-spacing:5px;
-
-    text-shadow:
-    0 0 20px #fff,
-    0 0 40px hotpink,
-    0 0 70px deeppink;
-
-    animation:clockGlow 1s infinite alternate;
-
-}
-
-@keyframes clockGlow{
-
-    from{
-
-        transform:scale(1);
-
-    }
-
-    to{
-
-        transform:scale(1.05);
-
-    }
-
-}
 /* =========================
       MESSAGE POPUP
 ========================= */
