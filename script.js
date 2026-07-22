@@ -667,53 +667,9 @@ fire.remove();
 
 
 }
-// =====================================
-// MESSAGE POPUP
-// =====================================
+openMessage.onclick = function(){
 
-
-
-// Popup show after final page open
-
-finalBtn.onclick=function(){
-
-    changePage(finalPage);
-
-    createConfetti();
-
-    startHearts();
-
-    startButterflies();
-
-    fireworks();
-
-    setTimeout(()=>{
-
-        birthdayPopup.style.display="flex";
-
-    },3000);
-
-};
-
-
-
-
-};
-// =====================================
-// POPUP CLOSE BUTTON
-// =====================================
-#birthdayPopup{
-    display:flex;
-}
-document.getElementById("openMessage").onclick=function(){
-
-    document.getElementById("birthdayPopup").style.display="none";
-
-};
-
-openMessage.onclick=function(){
-
-    birthdayPopup.style.display="none";
+    birthdayPopup.style.display = "none";
 
 };
 
