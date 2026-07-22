@@ -11,6 +11,8 @@ const galleryPage = document.getElementById("galleryPage");
 const letterPage = document.getElementById("letterPage");
 const finalPage = document.getElementById("finalPage");
 
+const birthdayPopup = document.getElementById("birthdayPopup");
+const openMessage = document.getElementById("openMessage");
 const continueBtn = document.getElementById("continueBtn");
 const loginBtn = document.getElementById("loginBtn");
 const celebrateBtn = document.getElementById("celebrateBtn");
@@ -695,11 +697,7 @@ finalBtn.onclick=function(){
 };
 
 
-// Close popup button
 
-openMessage.onclick=function(){
-
-    birthdayPopup.style.display="none";
 
 };
 // =====================================
@@ -709,5 +707,10 @@ openMessage.onclick=function(){
 document.getElementById("openMessage").onclick=function(){
 
     document.getElementById("birthdayPopup").style.display="none";
+
+};
+openMessage.onclick=function(){
+
+    birthdayPopup.style.display="none";
 
 };
