@@ -10,9 +10,6 @@ const cakePage = document.getElementById("cakePage");
 const galleryPage = document.getElementById("galleryPage");
 const letterPage = document.getElementById("letterPage");
 const finalPage = document.getElementById("finalPage");
-const birthdayPopup = document.getElementById("birthdayPopup");
-const openMessage = document.getElementById("openMessage");
-
 
 const continueBtn = document.getElementById("continueBtn");
 const loginBtn = document.getElementById("loginBtn");
@@ -400,29 +397,6 @@ const gift = document.querySelector(".gift");
 
 // Final Button
 
-// Final Button + Popup
-
-finalBtn.onclick=function(){
-
-    changePage(finalPage);
-
-    createConfetti();
-
-    startHearts();
-
-    startButterflies();
-
-    fireworks();
-
-
-    setTimeout(()=>{
-
-        document.getElementById("birthdayPopup").style.display="flex";
-
-    },3000);
-
-};
-
 
 
 
@@ -667,9 +641,3 @@ fire.remove();
 
 
 }
-openMessage.onclick = function(){
-
-    birthdayPopup.style.display = "none";
-
-};
-
