@@ -703,14 +703,18 @@ finalBtn.onclick=function(){
 // =====================================
 // POPUP CLOSE BUTTON
 // =====================================
-
+#birthdayPopup{
+    display:flex;
+}
 document.getElementById("openMessage").onclick=function(){
 
     document.getElementById("birthdayPopup").style.display="none";
 
 };
+
 openMessage.onclick=function(){
 
     birthdayPopup.style.display="none";
 
 };
+
