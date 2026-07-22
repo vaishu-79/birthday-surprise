@@ -396,7 +396,19 @@ const gift = document.querySelector(".gift");
 
 
 // Final Button
+finalBtn.onclick = function(){
 
+    changePage(finalPage);
+
+    createConfetti();
+
+    startHearts();
+
+    startButterflies();
+
+    fireworks();
+
+};
 
 
 
