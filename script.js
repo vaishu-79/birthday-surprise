@@ -191,7 +191,7 @@ cutBtn.onclick=function(){
 
         fireworks();
 
-    },4000);
+    },3000);
 
 };
 
