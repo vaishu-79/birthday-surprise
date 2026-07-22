@@ -1585,11 +1585,19 @@ opacity:.3;
 
     margin-top:20px;
 
-    line-height:35px;
+    line-height:45px;
 
-    font-size:22px;
+    font-size:30px;
+
+    font-family:'Dancing Script',cursive;
 
     color:#444;
+
+}
+.popupBox h2,
+.popupBox p{
+
+    font-family:'Dancing Script',cursive;
 
 }
 
