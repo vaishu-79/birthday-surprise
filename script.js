@@ -397,11 +397,11 @@ const gift = document.querySelector(".gift");
 
 // Final Button
 
+// Final Button + Popup
+
 finalBtn.onclick=function(){
 
-
     changePage(finalPage);
-
 
     createConfetti();
 
@@ -411,6 +411,12 @@ finalBtn.onclick=function(){
 
     fireworks();
 
+
+    setTimeout(()=>{
+
+        document.getElementById("birthdayPopup").style.display="flex";
+
+    },3000);
 
 };
 
@@ -658,4 +664,50 @@ fire.remove();
 
 
 }
+// =====================================
+// MESSAGE POPUP
+// =====================================
 
+const birthdayPopup = document.getElementById("birthdayPopup");
+const openMessage = document.getElementById("openMessage");
+
+
+// Popup show after final page open
+
+finalBtn.onclick=function(){
+
+    changePage(finalPage);
+
+    createConfetti();
+
+    startHearts();
+
+    startButterflies();
+
+    fireworks();
+
+    setTimeout(()=>{
+
+        birthdayPopup.style.display="flex";
+
+    },3000);
+
+};
+
+
+// Close popup button
+
+openMessage.onclick=function(){
+
+    birthdayPopup.style.display="none";
+
+};
+// =====================================
+// POPUP CLOSE BUTTON
+// =====================================
+
+document.getElementById("openMessage").onclick=function(){
+
+    document.getElementById("birthdayPopup").style.display="none";
+
+};
