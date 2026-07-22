@@ -137,12 +137,15 @@ text-shadow:
 
 p{
 
+font-family:'Poppins',sans-serif;
+
 font-size:20px;
 
 margin-top:20px;
 
-}
+line-height:35px;
 
+}
 
 
 
@@ -1049,9 +1052,9 @@ opacity:1;
 
 #letterText{
 
-font-family:'Great Vibes',cursive;
+font-family:'Dancing Script',cursive;
 
-font-size:32px;
+font-size:30px;
 
 color:#ffe6f7;
 
@@ -1060,7 +1063,6 @@ min-height:180px;
 line-height:45px;
 
 }
-
 
 
 /* Final Button Glow */
