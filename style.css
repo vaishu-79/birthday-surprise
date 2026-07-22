@@ -94,20 +94,11 @@ h1,
 .cakeTitle,
 .finalTitle{
 
-font-family:'Great Vibes',cursive;
+font-family:'Poppins',sans-serif;
 
-font-size:70px;
+font-size:60px;
 
-letter-spacing:2px;
-
-
-text-shadow:
-
-0 0 15px white,
-
-0 0 35px #ff66cc,
-
-0 0 60px #ff0099;
+font-weight:600;
 
 }
 
